@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="RemoveSolutionComponent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveSolutionComponentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveSolutionComponentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSolutionComponentList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="addDependentComponent" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeSpentOnClient" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSolutionComponentListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddSolutionComponentListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDependentComponents">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDependentComponentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDependentComponentsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasSolutionComponents">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objectId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="objectType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasSolutionComponentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HasSolutionComponentsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteMapId">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSiteMapIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiteMapIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSolutionMissingDependencies">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSolutionMissingDependenciesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsSolutionMissingDependenciesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSolutionComponent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objectId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="objectType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="addDependentComponent" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSubcomponent" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeMetadata" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSolutionComponentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddSolutionComponentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloneAsPatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="displayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="versionNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloneAsPatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CloneAsPatchResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloneAsSolution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="displayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="versionNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloneAsSolutionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CloneAsSolutionResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSolutionName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="solutionId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSolutionNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSolutionNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsConfigurationIdEmpty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="solutionId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsConfigurationIdEmptyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsConfigurationIdEmptyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddComponentDependency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="objectId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="objectType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddComponentDependencyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNumberPrefix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customizationPrefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNumberPrefixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNumberPrefixResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefreshNavigationTree">
+        <s:complexType />
+      </s:element>
+      <s:element name="RefreshNavigationTreeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RefreshNavigationTreeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifySolutionIsPatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionUniqueName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifySolutionIsPatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifySolutionIsPatchResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSubFilterHtml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="componentType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSubFilterHtmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateSubFilterHtmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSolution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="importJobId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSolutionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PromoteSolution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentSolutionUniqueName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PromoteSolutionResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RemoveSolutionComponentSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveSolutionComponent" />
+  </wsdl:message>
+  <wsdl:message name="RemoveSolutionComponentSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveSolutionComponentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSolutionComponentListSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSolutionComponentList" />
+  </wsdl:message>
+  <wsdl:message name="AddSolutionComponentListSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSolutionComponentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDependentComponentsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDependentComponents" />
+  </wsdl:message>
+  <wsdl:message name="CheckDependentComponentsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDependentComponentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HasSolutionComponentsSoapIn">
+    <wsdl:part name="parameters" element="tns:HasSolutionComponents" />
+  </wsdl:message>
+  <wsdl:message name="HasSolutionComponentsSoapOut">
+    <wsdl:part name="parameters" element="tns:HasSolutionComponentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteMapIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiteMapId" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteMapIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiteMapIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsSolutionMissingDependenciesSoapIn">
+    <wsdl:part name="parameters" element="tns:IsSolutionMissingDependencies" />
+  </wsdl:message>
+  <wsdl:message name="IsSolutionMissingDependenciesSoapOut">
+    <wsdl:part name="parameters" element="tns:IsSolutionMissingDependenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSolutionComponentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSolutionComponent" />
+  </wsdl:message>
+  <wsdl:message name="AddSolutionComponentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSolutionComponentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloneAsPatchSoapIn">
+    <wsdl:part name="parameters" element="tns:CloneAsPatch" />
+  </wsdl:message>
+  <wsdl:message name="CloneAsPatchSoapOut">
+    <wsdl:part name="parameters" element="tns:CloneAsPatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloneAsSolutionSoapIn">
+    <wsdl:part name="parameters" element="tns:CloneAsSolution" />
+  </wsdl:message>
+  <wsdl:message name="CloneAsSolutionSoapOut">
+    <wsdl:part name="parameters" element="tns:CloneAsSolutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSolutionNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSolutionName" />
+  </wsdl:message>
+  <wsdl:message name="GetSolutionNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSolutionNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsConfigurationIdEmptySoapIn">
+    <wsdl:part name="parameters" element="tns:IsConfigurationIdEmpty" />
+  </wsdl:message>
+  <wsdl:message name="IsConfigurationIdEmptySoapOut">
+    <wsdl:part name="parameters" element="tns:IsConfigurationIdEmptyResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddComponentDependencySoapIn">
+    <wsdl:part name="parameters" element="tns:AddComponentDependency" />
+  </wsdl:message>
+  <wsdl:message name="AddComponentDependencySoapOut">
+    <wsdl:part name="parameters" element="tns:AddComponentDependencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNumberPrefixSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNumberPrefix" />
+  </wsdl:message>
+  <wsdl:message name="GetNumberPrefixSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNumberPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefreshNavigationTreeSoapIn">
+    <wsdl:part name="parameters" element="tns:RefreshNavigationTree" />
+  </wsdl:message>
+  <wsdl:message name="RefreshNavigationTreeSoapOut">
+    <wsdl:part name="parameters" element="tns:RefreshNavigationTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifySolutionIsPatchSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifySolutionIsPatch" />
+  </wsdl:message>
+  <wsdl:message name="VerifySolutionIsPatchSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifySolutionIsPatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSubFilterHtmlSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSubFilterHtml" />
+  </wsdl:message>
+  <wsdl:message name="CreateSubFilterHtmlSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSubFilterHtmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSolutionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSolution" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSolutionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSolutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PromoteSolutionSoapIn">
+    <wsdl:part name="parameters" element="tns:PromoteSolution" />
+  </wsdl:message>
+  <wsdl:message name="PromoteSolutionSoapOut">
+    <wsdl:part name="parameters" element="tns:PromoteSolutionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SolutionWebServiceSoap">
+    <wsdl:operation name="RemoveSolutionComponent">
+      <wsdl:input message="tns:RemoveSolutionComponentSoapIn" />
+      <wsdl:output message="tns:RemoveSolutionComponentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSolutionComponentList">
+      <wsdl:input message="tns:AddSolutionComponentListSoapIn" />
+      <wsdl:output message="tns:AddSolutionComponentListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDependentComponents">
+      <wsdl:input message="tns:CheckDependentComponentsSoapIn" />
+      <wsdl:output message="tns:CheckDependentComponentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasSolutionComponents">
+      <wsdl:input message="tns:HasSolutionComponentsSoapIn" />
+      <wsdl:output message="tns:HasSolutionComponentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteMapId">
+      <wsdl:input message="tns:GetSiteMapIdSoapIn" />
+      <wsdl:output message="tns:GetSiteMapIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSolutionMissingDependencies">
+      <wsdl:input message="tns:IsSolutionMissingDependenciesSoapIn" />
+      <wsdl:output message="tns:IsSolutionMissingDependenciesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSolutionComponent">
+      <wsdl:input message="tns:AddSolutionComponentSoapIn" />
+      <wsdl:output message="tns:AddSolutionComponentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloneAsPatch">
+      <wsdl:input message="tns:CloneAsPatchSoapIn" />
+      <wsdl:output message="tns:CloneAsPatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloneAsSolution">
+      <wsdl:input message="tns:CloneAsSolutionSoapIn" />
+      <wsdl:output message="tns:CloneAsSolutionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSolutionName">
+      <wsdl:input message="tns:GetSolutionNameSoapIn" />
+      <wsdl:output message="tns:GetSolutionNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsConfigurationIdEmpty">
+      <wsdl:input message="tns:IsConfigurationIdEmptySoapIn" />
+      <wsdl:output message="tns:IsConfigurationIdEmptySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddComponentDependency">
+      <wsdl:input message="tns:AddComponentDependencySoapIn" />
+      <wsdl:output message="tns:AddComponentDependencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberPrefix">
+      <wsdl:input message="tns:GetNumberPrefixSoapIn" />
+      <wsdl:output message="tns:GetNumberPrefixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshNavigationTree">
+      <wsdl:input message="tns:RefreshNavigationTreeSoapIn" />
+      <wsdl:output message="tns:RefreshNavigationTreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifySolutionIsPatch">
+      <wsdl:input message="tns:VerifySolutionIsPatchSoapIn" />
+      <wsdl:output message="tns:VerifySolutionIsPatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSubFilterHtml">
+      <wsdl:input message="tns:CreateSubFilterHtmlSoapIn" />
+      <wsdl:output message="tns:CreateSubFilterHtmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSolution">
+      <wsdl:input message="tns:DeleteSolutionSoapIn" />
+      <wsdl:output message="tns:DeleteSolutionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PromoteSolution">
+      <wsdl:input message="tns:PromoteSolutionSoapIn" />
+      <wsdl:output message="tns:PromoteSolutionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SolutionWebServiceSoap" type="tns:SolutionWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RemoveSolutionComponent">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RemoveSolutionComponent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSolutionComponentList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AddSolutionComponentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDependentComponents">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CheckDependentComponents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasSolutionComponents">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/HasSolutionComponents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteMapId">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSiteMapId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSolutionMissingDependencies">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsSolutionMissingDependencies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSolutionComponent">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AddSolutionComponent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloneAsPatch">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CloneAsPatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloneAsSolution">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CloneAsSolution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSolutionName">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSolutionName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsConfigurationIdEmpty">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsConfigurationIdEmpty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComponentDependency">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AddComponentDependency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberPrefix">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetNumberPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshNavigationTree">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RefreshNavigationTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifySolutionIsPatch">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/VerifySolutionIsPatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSubFilterHtml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateSubFilterHtml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSolution">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteSolution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PromoteSolution">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/PromoteSolution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SolutionWebServiceSoap12" type="tns:SolutionWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RemoveSolutionComponent">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RemoveSolutionComponent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSolutionComponentList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AddSolutionComponentList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDependentComponents">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CheckDependentComponents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasSolutionComponents">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/HasSolutionComponents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteMapId">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSiteMapId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSolutionMissingDependencies">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsSolutionMissingDependencies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSolutionComponent">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AddSolutionComponent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloneAsPatch">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CloneAsPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloneAsSolution">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CloneAsSolution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSolutionName">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSolutionName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsConfigurationIdEmpty">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsConfigurationIdEmpty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComponentDependency">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AddComponentDependency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberPrefix">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetNumberPrefix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshNavigationTree">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RefreshNavigationTree" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifySolutionIsPatch">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/VerifySolutionIsPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSubFilterHtml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateSubFilterHtml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSolution">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteSolution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PromoteSolution">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/PromoteSolution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SolutionWebService">
+    <wsdl:port name="SolutionWebServiceSoap" binding="tns:SolutionWebServiceSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/Solution.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SolutionWebServiceSoap12" binding="tns:SolutionWebServiceSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/Solution.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

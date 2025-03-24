@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:element name="GetQueryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="queryType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSystemQuery" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUserQuery" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeAPIQuery" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQueryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQueryListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTruncatedQueryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="queryType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSystemQuery" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUserQuery" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeAPIQuery" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isTruncateListOfViewsToShow" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTruncatedQueryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTruncatedQueryListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultAdvancedFindView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="viewIdOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultAdvancedFindViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDefaultAdvancedFindViewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateRecordTypeMenuXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityLogicalName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="menuId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateRecordTypeMenuXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateRecordTypeMenuXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserQueryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAndRetrieveUserQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="queryType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="description">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="fetchXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="layoutXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conditionalFormatting" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAndRetrieveUserQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateAndRetrieveUserQueryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fetchXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="layoutXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="viewType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="conditionalFormatting" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateQueryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSystemQueryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFieldsPropertiesXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="retrieveLatest" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFieldsPropertiesXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFieldsPropertiesXmlResult" type="tns:FieldPropertiesInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FieldPropertiesInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FieldXml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertiesXml" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEntityFieldList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityFieldListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityFieldListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityFieldListAdvanced">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="langCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isValidForUpdateRequired" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityFieldListAdvancedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityFieldListAdvancedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityFieldListWithRestriction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isValidForUpdateRequired" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityFieldListWithRestrictionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityFieldListWithRestrictionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkedEntityList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkedEntityListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinkedEntityListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkedEntityListAdvanced">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="langCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeReferencesFrom" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeReferencesTo" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkedEntityListAdvancedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinkedEntityListAdvancedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetQueryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQueryList" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQueryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTruncatedQueryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTruncatedQueryList" />
+  </wsdl:message>
+  <wsdl:message name="GetTruncatedQueryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTruncatedQueryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultAdvancedFindViewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDefaultAdvancedFindView" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultAdvancedFindViewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDefaultAdvancedFindViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateRecordTypeMenuXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateRecordTypeMenuXml" />
+  </wsdl:message>
+  <wsdl:message name="GenerateRecordTypeMenuXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateRecordTypeMenuXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserQuery" />
+  </wsdl:message>
+  <wsdl:message name="GetUserQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAndRetrieveUserQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAndRetrieveUserQuery" />
+  </wsdl:message>
+  <wsdl:message name="CreateAndRetrieveUserQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAndRetrieveUserQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateQuery" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:GetSystemQuery" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:GetSystemQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFieldsPropertiesXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFieldsPropertiesXml" />
+  </wsdl:message>
+  <wsdl:message name="GetFieldsPropertiesXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFieldsPropertiesXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityFieldListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityFieldList" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityFieldListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityFieldListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityFieldListAdvancedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityFieldListAdvanced" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityFieldListAdvancedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityFieldListAdvancedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityFieldListWithRestrictionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityFieldListWithRestriction" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityFieldListWithRestrictionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityFieldListWithRestrictionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkedEntityListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLinkedEntityList" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkedEntityListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinkedEntityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkedEntityListAdvancedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLinkedEntityListAdvanced" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkedEntityListAdvancedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinkedEntityListAdvancedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AdvancedFindSoap">
+    <wsdl:operation name="GetQueryList">
+      <wsdl:input message="tns:GetQueryListSoapIn" />
+      <wsdl:output message="tns:GetQueryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruncatedQueryList">
+      <wsdl:input message="tns:GetTruncatedQueryListSoapIn" />
+      <wsdl:output message="tns:GetTruncatedQueryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultAdvancedFindView">
+      <wsdl:input message="tns:GetDefaultAdvancedFindViewSoapIn" />
+      <wsdl:output message="tns:GetDefaultAdvancedFindViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRecordTypeMenuXml">
+      <wsdl:input message="tns:GenerateRecordTypeMenuXmlSoapIn" />
+      <wsdl:output message="tns:GenerateRecordTypeMenuXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserQuery">
+      <wsdl:input message="tns:GetUserQuerySoapIn" />
+      <wsdl:output message="tns:GetUserQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAndRetrieveUserQuery">
+      <wsdl:input message="tns:CreateAndRetrieveUserQuerySoapIn" />
+      <wsdl:output message="tns:CreateAndRetrieveUserQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuery">
+      <wsdl:input message="tns:UpdateQuerySoapIn" />
+      <wsdl:output message="tns:UpdateQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemQuery">
+      <wsdl:input message="tns:GetSystemQuerySoapIn" />
+      <wsdl:output message="tns:GetSystemQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldsPropertiesXml">
+      <wsdl:input message="tns:GetFieldsPropertiesXmlSoapIn" />
+      <wsdl:output message="tns:GetFieldsPropertiesXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldList">
+      <wsdl:input message="tns:GetEntityFieldListSoapIn" />
+      <wsdl:output message="tns:GetEntityFieldListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldList">
+      <wsdl:input name="GetEntityFieldListAdvanced" message="tns:GetEntityFieldListAdvancedSoapIn" />
+      <wsdl:output name="GetEntityFieldListAdvanced" message="tns:GetEntityFieldListAdvancedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldListWithRestriction">
+      <wsdl:input message="tns:GetEntityFieldListWithRestrictionSoapIn" />
+      <wsdl:output message="tns:GetEntityFieldListWithRestrictionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkedEntityList">
+      <wsdl:input message="tns:GetLinkedEntityListSoapIn" />
+      <wsdl:output message="tns:GetLinkedEntityListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkedEntityList">
+      <wsdl:input name="GetLinkedEntityListAdvanced" message="tns:GetLinkedEntityListAdvancedSoapIn" />
+      <wsdl:output name="GetLinkedEntityListAdvanced" message="tns:GetLinkedEntityListAdvancedSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdvancedFindSoap" type="tns:AdvancedFindSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetQueryList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQueryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruncatedQueryList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetTruncatedQueryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultAdvancedFindView">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetDefaultAdvancedFindView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRecordTypeMenuXml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GenerateRecordTypeMenuXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserQuery">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetUserQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAndRetrieveUserQuery">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateAndRetrieveUserQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuery">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemQuery">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSystemQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldsPropertiesXml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetFieldsPropertiesXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityFieldList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityFieldListAdvanced" style="document" />
+      <wsdl:input name="GetEntityFieldListAdvanced">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetEntityFieldListAdvanced">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldListWithRestriction">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityFieldListWithRestriction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkedEntityList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetLinkedEntityList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkedEntityList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetLinkedEntityListAdvanced" style="document" />
+      <wsdl:input name="GetLinkedEntityListAdvanced">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLinkedEntityListAdvanced">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AdvancedFindSoap12" type="tns:AdvancedFindSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetQueryList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQueryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruncatedQueryList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetTruncatedQueryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultAdvancedFindView">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetDefaultAdvancedFindView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRecordTypeMenuXml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GenerateRecordTypeMenuXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserQuery">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetUserQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAndRetrieveUserQuery">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateAndRetrieveUserQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuery">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemQuery">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSystemQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldsPropertiesXml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetFieldsPropertiesXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityFieldList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityFieldListAdvanced" style="document" />
+      <wsdl:input name="GetEntityFieldListAdvanced">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetEntityFieldListAdvanced">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldListWithRestriction">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityFieldListWithRestriction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkedEntityList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetLinkedEntityList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkedEntityList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetLinkedEntityListAdvanced" style="document" />
+      <wsdl:input name="GetLinkedEntityListAdvanced">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLinkedEntityListAdvanced">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdvancedFind">
+    <wsdl:port name="AdvancedFindSoap" binding="tns:AdvancedFindSoap">
+      <soap:address location="http://jemorl.crm.dynamics.com/appwebservices/AdvancedFind.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AdvancedFindSoap12" binding="tns:AdvancedFindSoap12">
+      <soap12:address location="http://jemorl.crm.dynamics.com/appwebservices/AdvancedFind.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

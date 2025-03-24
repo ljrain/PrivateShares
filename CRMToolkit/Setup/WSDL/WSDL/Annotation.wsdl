@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="UpdateAndRetrieveTimeStamp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="annotationId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="annotationXml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAndRetrieveTimeStampResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateAndRetrieveTimeStampResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noteDataControlId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="parentEntity" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="parentEntityId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="wrpcTokenAsQueryString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveNotesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveNotesCollection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentEntityId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pagingCookie" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveNotesCollectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveNotesCollectionResult" type="tns:RetrieveNotesCollectionResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetrieveNotesCollectionResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AnnotationCollection" type="tns:ArrayOfAnnotationUI" />
+          <s:element minOccurs="1" maxOccurs="1" name="MoreRecords" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PagingCookie" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnnotationUI">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AnnotationUI" nillable="true" type="tns:AnnotationUI" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AnnotationUI">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FormattedCreatedOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoteId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="tns:EntityReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="tns:EntityReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FileSize" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityReference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TypeCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeDisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteAnnotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAnnotationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveAttachment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAttachmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveAttachmentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveWithAttachment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="update" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveWithAttachmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveWithAttachmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateAndRetrieveTimeStampSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAndRetrieveTimeStamp" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAndRetrieveTimeStampSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAndRetrieveTimeStampResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveNotes" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveNotesCollectionSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveNotesCollection" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveNotesCollectionSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveNotesCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnnotationSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAnnotation" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnnotationSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAnnotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAttachmentSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveAttachment" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAttachmentSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveWithAttachmentSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveWithAttachment" />
+  </wsdl:message>
+  <wsdl:message name="SaveWithAttachmentSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveWithAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AnnotationWebServiceSoap">
+    <wsdl:operation name="UpdateAndRetrieveTimeStamp">
+      <wsdl:input message="tns:UpdateAndRetrieveTimeStampSoapIn" />
+      <wsdl:output message="tns:UpdateAndRetrieveTimeStampSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveNotes">
+      <wsdl:input message="tns:RetrieveNotesSoapIn" />
+      <wsdl:output message="tns:RetrieveNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveNotesCollection">
+      <wsdl:input message="tns:RetrieveNotesCollectionSoapIn" />
+      <wsdl:output message="tns:RetrieveNotesCollectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnnotation">
+      <wsdl:input message="tns:DeleteAnnotationSoapIn" />
+      <wsdl:output message="tns:DeleteAnnotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAttachment">
+      <wsdl:input message="tns:RemoveAttachmentSoapIn" />
+      <wsdl:output message="tns:RemoveAttachmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveWithAttachment">
+      <wsdl:input message="tns:SaveWithAttachmentSoapIn" />
+      <wsdl:output message="tns:SaveWithAttachmentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AnnotationWebServiceSoap" type="tns:AnnotationWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateAndRetrieveTimeStamp">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateAndRetrieveTimeStamp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveNotes">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveNotesCollection">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveNotesCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnnotation">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteAnnotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAttachment">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RemoveAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWithAttachment">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SaveWithAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AnnotationWebServiceSoap12" type="tns:AnnotationWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateAndRetrieveTimeStamp">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateAndRetrieveTimeStamp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveNotes">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveNotesCollection">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveNotesCollection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnnotation">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteAnnotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAttachment">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RemoveAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWithAttachment">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SaveWithAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AnnotationWebService">
+    <wsdl:port name="AnnotationWebServiceSoap" binding="tns:AnnotationWebServiceSoap">
+      <soap:address location="http://jemorl.crm.dynamics.com/appwebservices/Annotation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AnnotationWebServiceSoap12" binding="tns:AnnotationWebServiceSoap12">
+      <soap12:address location="http://jemorl.crm.dynamics.com/appwebservices/Annotation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

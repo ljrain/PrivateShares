@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- DB Pop for projected load scenario for this user role. -->
+<!-- Max number of Post Follow are 500 records so creating around 400 to allow additional follow to be created. -->
+<!-- In regular load, stats project a user in average creates 2 - 3 post/day. We are creating ~300 manual posts/user in this dbpop -->
+<!-- Autopost will be created by the existing scenarios in this dbpop. -->
+<DbPopConfig>
+  <exec threadCount="20"/>
+  <userGroups domain="DOMAINNMAME" webserver="WEBSERVERNAME" discoveryserver="DISCOVERYNAME" organization="ORGANIZATIONNAME" authentication="ActiveDirectory" ssl="false" >
+    <userGroup name="{2}{1}@{0}" startIndex="12" count="36" password="PASSWORD"/>
+  </userGroups>
+  <globalTags>
+    <tag name="allsystemuserids">
+      <query>
+        <column name="systemuserid"/>
+        <entity name="systemuser"/>
+      </query>
+    </tag>   
+  </globalTags>
+  <objectDist>
+    <account count="200" name="replace(randomstring,10,15) + test object" save_1="settag(accountIdVariable1,account,entityid)" save_2="settype(accountVariable1)"/>
+    <phonecall count="200" from="gettag(allsystemuserids,getrandom,systemuserid)" to="gettag(allsystemuserids,getrandom,systemuserid)"/>
+ <contact count="3" save_1="settag(contactIdVariable1,contact,entityid)" save_2="settype(contactVariable1)">
+		<DynamicEntity logicalname='new_vehicle' count='2' new_name="Name+ replace(randomstring,5,10)" new_make="make_+replace(randomstring,5,10)" new_model="model_+replace(randomstring,5,10)" new_year="replace(randomnumber,1920,2016)" new_driver.Id="getdyntag(contactIdVariable1)" new_driver.LogicalName="getdyntag(contactVariable1)"/>	  
+	</contact>
+  </objectDist>
+</DbPopConfig>

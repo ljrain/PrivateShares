@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:element name="RetrieveTypeCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveTypeCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetrieveTypeCodeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="typesArray" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="bindingColumns" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalParameters" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lookupValues" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="positions" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="resolveEmailAddress" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="savedQueryTypeParameter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="defaultViewId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="defaultViewType" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="defaultViewFetchXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="defaultViewLayoutXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guidValues" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrieveItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveInlineSearchResults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="typesArray" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="bindingColumns" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalParameters" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lookupValues" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="positions" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="resolveEmailAddress" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="savedQueryTypeParameter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="defaultViewId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="defaultViewType" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="defaultViewFetchXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="defaultViewLayoutXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guidValues" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="sortResults" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveInlineSearchResultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveInlineSearchResultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDuplicates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="leadId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lookupType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="defaultViewId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDuplicatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveDuplicatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveFormAssistantHtml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoryId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="bindingColumns" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalParameters" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveFormAssistantHtmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveFormAssistantHtmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveTypeCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveTypeCode" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveTypeCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveTypeCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveItemSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveItem" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveItemSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveInlineSearchResultsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveInlineSearchResults" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveInlineSearchResultsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveInlineSearchResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDuplicatesSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveDuplicates" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDuplicatesSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveDuplicatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveFormAssistantHtmlSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveFormAssistantHtml" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveFormAssistantHtmlSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveFormAssistantHtmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LookupServiceSoap">
+    <wsdl:operation name="RetrieveTypeCode">
+      <wsdl:input message="tns:RetrieveTypeCodeSoapIn" />
+      <wsdl:output message="tns:RetrieveTypeCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveItem">
+      <wsdl:input message="tns:RetrieveItemSoapIn" />
+      <wsdl:output message="tns:RetrieveItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveInlineSearchResults">
+      <wsdl:input message="tns:RetrieveInlineSearchResultsSoapIn" />
+      <wsdl:output message="tns:RetrieveInlineSearchResultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDuplicates">
+      <wsdl:input message="tns:RetrieveDuplicatesSoapIn" />
+      <wsdl:output message="tns:RetrieveDuplicatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFormAssistantHtml">
+      <wsdl:input message="tns:RetrieveFormAssistantHtmlSoapIn" />
+      <wsdl:output message="tns:RetrieveFormAssistantHtmlSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LookupServiceSoap" type="tns:LookupServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveTypeCode">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveTypeCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveItem">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveInlineSearchResults">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveInlineSearchResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDuplicates">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveDuplicates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFormAssistantHtml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveFormAssistantHtml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LookupServiceSoap12" type="tns:LookupServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveTypeCode">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveTypeCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveItem">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveInlineSearchResults">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveInlineSearchResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDuplicates">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveDuplicates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFormAssistantHtml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveFormAssistantHtml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LookupService">
+    <wsdl:port name="LookupServiceSoap" binding="tns:LookupServiceSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/LookupService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LookupServiceSoap12" binding="tns:LookupServiceSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/LookupService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

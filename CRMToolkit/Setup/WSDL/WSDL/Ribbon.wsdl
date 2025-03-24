@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="ProcessDynamicMenuXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dynamicMenuXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entityLogicalName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hierarchyLocation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessDynamicMenuXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessDynamicMenuXmlResult" type="tns:DynamicMenuReturnValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DynamicMenuReturnValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MenuXml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommandDefinitions" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RuleDefinitions" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CommandPrefix" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRibbonXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tabId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="languageCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hierarchyLocation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRibbonXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRibbonXmlResult" type="tns:RibbonLayout" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RibbonLayout">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsValid" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LayoutXml" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCommandBarJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityLogicalName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ribbonContext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hierarchyLocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="languageCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommandBarJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommandBarJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSelectedCommandBarXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityLogicalName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ribbonContext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hierarchyLocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relationshipType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relationshipName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="languageCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSelectedCommandBarXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSelectedCommandBarXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExplorerRibbons">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityTypes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="oneOffTabs" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="languageCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetExplorerRibbonsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExplorerRibbonsResult" type="tns:RibbonDataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RibbonDataSet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TemplatesXml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tabs" type="tns:ArrayOfRibbonTabData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRibbonTabData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RibbonTabData" nillable="true" type="tns:RibbonTabData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RibbonTabData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OriginalTabId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabXml" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContextualGroupSequence" type="s:unsignedInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRibbonXmlForEntities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityList" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="languageCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ribbonContext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="formState" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRibbonXmlForEntitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRibbonXmlForEntitiesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReloadCommandBar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityLogicalName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ribbonContext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hierarchyLocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recordId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReloadCommandBarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReloadCommandBarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ProcessDynamicMenuXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessDynamicMenuXml" />
+  </wsdl:message>
+  <wsdl:message name="ProcessDynamicMenuXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessDynamicMenuXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRibbonXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRibbonXml" />
+  </wsdl:message>
+  <wsdl:message name="GetRibbonXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRibbonXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCommandBarJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCommandBarJson" />
+  </wsdl:message>
+  <wsdl:message name="GetCommandBarJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommandBarJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectedCommandBarXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSelectedCommandBarXml" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectedCommandBarXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSelectedCommandBarXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExplorerRibbonsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExplorerRibbons" />
+  </wsdl:message>
+  <wsdl:message name="GetExplorerRibbonsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExplorerRibbonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRibbonXmlForEntitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRibbonXmlForEntities" />
+  </wsdl:message>
+  <wsdl:message name="GetRibbonXmlForEntitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRibbonXmlForEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReloadCommandBarSoapIn">
+    <wsdl:part name="parameters" element="tns:ReloadCommandBar" />
+  </wsdl:message>
+  <wsdl:message name="ReloadCommandBarSoapOut">
+    <wsdl:part name="parameters" element="tns:ReloadCommandBarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RibbonWebServiceSoap">
+    <wsdl:operation name="ProcessDynamicMenuXml">
+      <wsdl:input message="tns:ProcessDynamicMenuXmlSoapIn" />
+      <wsdl:output message="tns:ProcessDynamicMenuXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonXml">
+      <wsdl:input message="tns:GetRibbonXmlSoapIn" />
+      <wsdl:output message="tns:GetRibbonXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommandBarJson">
+      <wsdl:input message="tns:GetCommandBarJsonSoapIn" />
+      <wsdl:output message="tns:GetCommandBarJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedCommandBarXml">
+      <wsdl:input message="tns:GetSelectedCommandBarXmlSoapIn" />
+      <wsdl:output message="tns:GetSelectedCommandBarXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExplorerRibbons">
+      <wsdl:input message="tns:GetExplorerRibbonsSoapIn" />
+      <wsdl:output message="tns:GetExplorerRibbonsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonXmlForEntities">
+      <wsdl:input message="tns:GetRibbonXmlForEntitiesSoapIn" />
+      <wsdl:output message="tns:GetRibbonXmlForEntitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReloadCommandBar">
+      <wsdl:input message="tns:ReloadCommandBarSoapIn" />
+      <wsdl:output message="tns:ReloadCommandBarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RibbonWebServiceSoap" type="tns:RibbonWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessDynamicMenuXml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ProcessDynamicMenuXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonXml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetRibbonXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommandBarJson">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetCommandBarJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedCommandBarXml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSelectedCommandBarXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExplorerRibbons">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetExplorerRibbons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonXmlForEntities">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetRibbonXmlForEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReloadCommandBar">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ReloadCommandBar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RibbonWebServiceSoap12" type="tns:RibbonWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessDynamicMenuXml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ProcessDynamicMenuXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonXml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetRibbonXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommandBarJson">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetCommandBarJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedCommandBarXml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSelectedCommandBarXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExplorerRibbons">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetExplorerRibbons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonXmlForEntities">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetRibbonXmlForEntities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReloadCommandBar">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ReloadCommandBar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RibbonWebService">
+    <wsdl:port name="RibbonWebServiceSoap" binding="tns:RibbonWebServiceSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/Ribbon.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RibbonWebServiceSoap12" binding="tns:RibbonWebServiceSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/Ribbon.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

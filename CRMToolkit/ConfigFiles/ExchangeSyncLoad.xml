@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+ <ExchangeSync>
+   <Configuration>
+    <Enabled>false</Enabled>
+    <Identifier>ExchangeSync</Identifier>
+    <Duration>3</Duration>
+  </Configuration>
+   <Entities>
+    - <Entity Name="Appointment">
+      <TotalCreatesPerHour>196</TotalCreatesPerHour>
+      <TotalExchangeCreatesPerHour>119</TotalExchangeCreatesPerHour>
+      <TotalUpdatesPerHour>94</TotalUpdatesPerHour>
+      <TotalExchangeUpdatesPerHour>94</TotalExchangeUpdatesPerHour>
+    </Entity>
+     <Entity Name="Contact">
+      <TotalCreatesPerHour>354</TotalCreatesPerHour>
+      <TotalExchangeCreatesPerHour>354</TotalExchangeCreatesPerHour>
+      <TotalUpdatesPerHour>252</TotalUpdatesPerHour>
+      <TotalExchangeUpdatesPerHour>252</TotalExchangeUpdatesPerHour>
+    </Entity>
+     <Entity Name="Task">
+      <TotalCreatesPerHour>434</TotalCreatesPerHour>
+      <TotalExchangeCreatesPerHour>434</TotalExchangeCreatesPerHour>
+      <TotalUpdatesPerHour>188</TotalUpdatesPerHour>
+      <TotalExchangeUpdatesPerHour>188</TotalExchangeUpdatesPerHour>
+    </Entity>
+     <Entity Name="ServiceAppointment">
+      <TotalCreatesPerHour>10</TotalCreatesPerHour>
+      <TotalExchangeCreatesPerHour>10</TotalExchangeCreatesPerHour>
+      <TotalUpdatesPerHour>24</TotalUpdatesPerHour>
+      <TotalExchangeUpdatesPerHour>24</TotalExchangeUpdatesPerHour>
+    </Entity>
+     <Entity Name="Letter">
+      <TotalCreatesPerHour>26</TotalCreatesPerHour>
+      <TotalExchangeCreatesPerHour>26</TotalExchangeCreatesPerHour>
+      <TotalUpdatesPerHour>26</TotalUpdatesPerHour>
+      <TotalExchangeUpdatesPerHour>26</TotalExchangeUpdatesPerHour>
+    </Entity>
+     <Entity Name="Phonecall">
+      <TotalCreatesPerHour>56</TotalCreatesPerHour>
+      <TotalExchangeCreatesPerHour>56</TotalExchangeCreatesPerHour>
+      <TotalUpdatesPerHour>32</TotalUpdatesPerHour>
+      <TotalExchangeUpdatesPerHour>32</TotalExchangeUpdatesPerHour>
+    </Entity>
+     <Entity Name="RecurringAppointmentMaster">
+      <TotalCreatesPerHour>32</TotalCreatesPerHour>
+      <TotalExchangeCreatesPerHour>10</TotalExchangeCreatesPerHour>
+      <TotalUpdatesPerHour>32</TotalUpdatesPerHour>
+      <TotalExchangeUpdatesPerHour>20</TotalExchangeUpdatesPerHour>
+    </Entity>
+  </Entities>
+</ExchangeSync>

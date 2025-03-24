@@ -1,0 +1,1395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="SaveArticleComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commentXml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="commentId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveArticleCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveArticleCommentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveContractCalendar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="objectType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="content">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveContractCalendarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveContractCalendarResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelCase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="caseId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelCaseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResolveCase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="activityXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newStatus" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="returnErrorString" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="incidentId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="incidentData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResolveCaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResolveCaseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCaseResolutionDefaults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="incidentId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCaseResolutionDefaultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveCaseResolutionDefaultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsRefreshFormAccessible">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsRefreshFormAccessibleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsRefreshFormAccessibleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenewEntitlement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entitlementId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newStatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenewEntitlementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewEntitlementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuickFindColumns">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityTypeCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="columneName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuickFindColumnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuickFindColumnsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuickFindDisplayNameColumns">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityTypeCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="columneName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuickFindDisplayNameColumnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuickFindDisplayNameColumnsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptionDisplayName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityTypeCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="columneName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="option" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptionDisplayNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOptionDisplayNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptionDisplayNameXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pickListInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptionDisplayNameXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOptionDisplayNameXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchIncidentEntityFieldList">
+        <s:complexType />
+      </s:element>
+      <s:element name="FetchIncidentEntityFieldListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchIncidentEntityFieldListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidStateTransition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="incidentId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidStateTransitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidStateTransitionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidStatusReasonTransition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="incidentId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="toStateCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidStatusReasonTransitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidStatusReasonTransitionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsEntityRecordValid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsEntityRecordValidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsEntityRecordValidResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EntityRecordErrorNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EntityRecordErrorNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntityRecordErrorNotificationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConvertRuleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="queueId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sourceTypeCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConvertRuleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConvertRuleIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsParentRecordInactive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entityId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsParentRecordInactiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsParentRecordInactiveResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAttributeList">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveAttributeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAttributeListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSlaDefault">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="slaId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSlaDefaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsSlaDefaultResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSlaIfNoDefaultSlaExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="slaId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSlaIfNoDefaultSlaExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSlaIfNoDefaultSlaExistsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSlaActive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="slaId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSlaActiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsSlaActiveResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQueueMembers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="queueId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQueueMembersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateQueueMembersResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitySpecificTypeCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitySpecificTypeCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActivitySpecificTypeCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="systemUserIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImageUrlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLookUpImageUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lookUpInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLookUpImageUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLookUpImageUrlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityQuickCreateOption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityQuickCreateOptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEntityQuickCreateOptionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityCollectionName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityCodes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityCollectionNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityCollectionNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuickFindColumnCollectionForEntityArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityCodes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuickFindColumnCollectionForEntityArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuickFindColumnCollectionForEntityArrayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferencedEntityName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityTypeCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="columneName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferencedEntityNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetReferencedEntityNameResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLocalFacets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLocalFacetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLocalFacetsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferencedEntityImageColumnName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityTypeCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="columneName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferencedEntityImageColumnNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReferencedEntityImageColumnNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SaveArticleCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveArticleComment" />
+  </wsdl:message>
+  <wsdl:message name="SaveArticleCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveArticleCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveContractCalendarSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveContractCalendar" />
+  </wsdl:message>
+  <wsdl:message name="SaveContractCalendarSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveContractCalendarResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelCaseSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelCase" />
+  </wsdl:message>
+  <wsdl:message name="CancelCaseSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResolveCaseSoapIn">
+    <wsdl:part name="parameters" element="tns:ResolveCase" />
+  </wsdl:message>
+  <wsdl:message name="ResolveCaseSoapOut">
+    <wsdl:part name="parameters" element="tns:ResolveCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCaseResolutionDefaultsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveCaseResolutionDefaults" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCaseResolutionDefaultsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveCaseResolutionDefaultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsRefreshFormAccessibleSoapIn">
+    <wsdl:part name="parameters" element="tns:IsRefreshFormAccessible" />
+  </wsdl:message>
+  <wsdl:message name="IsRefreshFormAccessibleSoapOut">
+    <wsdl:part name="parameters" element="tns:IsRefreshFormAccessibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RenewEntitlementSoapIn">
+    <wsdl:part name="parameters" element="tns:RenewEntitlement" />
+  </wsdl:message>
+  <wsdl:message name="RenewEntitlementSoapOut">
+    <wsdl:part name="parameters" element="tns:RenewEntitlementResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuickFindColumnsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuickFindColumns" />
+  </wsdl:message>
+  <wsdl:message name="GetQuickFindColumnsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuickFindColumnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuickFindDisplayNameColumnsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuickFindDisplayNameColumns" />
+  </wsdl:message>
+  <wsdl:message name="GetQuickFindDisplayNameColumnsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuickFindDisplayNameColumnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionDisplayNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOptionDisplayName" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionDisplayNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOptionDisplayNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionDisplayNameXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOptionDisplayNameXml" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionDisplayNameXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOptionDisplayNameXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchIncidentEntityFieldListSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchIncidentEntityFieldList" />
+  </wsdl:message>
+  <wsdl:message name="FetchIncidentEntityFieldListSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchIncidentEntityFieldListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidStateTransitionSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidStateTransition" />
+  </wsdl:message>
+  <wsdl:message name="IsValidStateTransitionSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidStateTransitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidStatusReasonTransitionSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidStatusReasonTransition" />
+  </wsdl:message>
+  <wsdl:message name="IsValidStatusReasonTransitionSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidStatusReasonTransitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsEntityRecordValidSoapIn">
+    <wsdl:part name="parameters" element="tns:IsEntityRecordValid" />
+  </wsdl:message>
+  <wsdl:message name="IsEntityRecordValidSoapOut">
+    <wsdl:part name="parameters" element="tns:IsEntityRecordValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="EntityRecordErrorNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:EntityRecordErrorNotification" />
+  </wsdl:message>
+  <wsdl:message name="EntityRecordErrorNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:EntityRecordErrorNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConvertRuleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConvertRuleId" />
+  </wsdl:message>
+  <wsdl:message name="GetConvertRuleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConvertRuleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsParentRecordInactiveSoapIn">
+    <wsdl:part name="parameters" element="tns:IsParentRecordInactive" />
+  </wsdl:message>
+  <wsdl:message name="IsParentRecordInactiveSoapOut">
+    <wsdl:part name="parameters" element="tns:IsParentRecordInactiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAttributeListSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAttributeList" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAttributeListSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAttributeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsSlaDefaultSoapIn">
+    <wsdl:part name="parameters" element="tns:IsSlaDefault" />
+  </wsdl:message>
+  <wsdl:message name="IsSlaDefaultSoapOut">
+    <wsdl:part name="parameters" element="tns:IsSlaDefaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSlaIfNoDefaultSlaExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSlaIfNoDefaultSlaExists" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSlaIfNoDefaultSlaExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSlaIfNoDefaultSlaExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsSlaActiveSoapIn">
+    <wsdl:part name="parameters" element="tns:IsSlaActive" />
+  </wsdl:message>
+  <wsdl:message name="IsSlaActiveSoapOut">
+    <wsdl:part name="parameters" element="tns:IsSlaActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQueueMembersSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateQueueMembers" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQueueMembersSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateQueueMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitySpecificTypeCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivitySpecificTypeCode" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitySpecificTypeCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivitySpecificTypeCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImageUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImageUrl" />
+  </wsdl:message>
+  <wsdl:message name="GetImageUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImageUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLookUpImageUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLookUpImageUrl" />
+  </wsdl:message>
+  <wsdl:message name="GetLookUpImageUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLookUpImageUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityQuickCreateOptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityQuickCreateOption" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityQuickCreateOptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityQuickCreateOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityCollectionNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityCollectionName" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityCollectionNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityCollectionNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuickFindColumnCollectionForEntityArraySoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuickFindColumnCollectionForEntityArray" />
+  </wsdl:message>
+  <wsdl:message name="GetQuickFindColumnCollectionForEntityArraySoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuickFindColumnCollectionForEntityArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReferencedEntityNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReferencedEntityName" />
+  </wsdl:message>
+  <wsdl:message name="GetReferencedEntityNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReferencedEntityNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLocalFacetsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLocalFacets" />
+  </wsdl:message>
+  <wsdl:message name="GetLocalFacetsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLocalFacetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReferencedEntityImageColumnNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReferencedEntityImageColumnName" />
+  </wsdl:message>
+  <wsdl:message name="GetReferencedEntityImageColumnNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReferencedEntityImageColumnNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CustomerServiceSoap">
+    <wsdl:operation name="SaveArticleComment">
+      <wsdl:input message="tns:SaveArticleCommentSoapIn" />
+      <wsdl:output message="tns:SaveArticleCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveContractCalendar">
+      <wsdl:input message="tns:SaveContractCalendarSoapIn" />
+      <wsdl:output message="tns:SaveContractCalendarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelCase">
+      <wsdl:input message="tns:CancelCaseSoapIn" />
+      <wsdl:output message="tns:CancelCaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResolveCase">
+      <wsdl:input message="tns:ResolveCaseSoapIn" />
+      <wsdl:output message="tns:ResolveCaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCaseResolutionDefaults">
+      <wsdl:input message="tns:RetrieveCaseResolutionDefaultsSoapIn" />
+      <wsdl:output message="tns:RetrieveCaseResolutionDefaultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsRefreshFormAccessible">
+      <wsdl:input message="tns:IsRefreshFormAccessibleSoapIn" />
+      <wsdl:output message="tns:IsRefreshFormAccessibleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RenewEntitlement">
+      <wsdl:input message="tns:RenewEntitlementSoapIn" />
+      <wsdl:output message="tns:RenewEntitlementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickFindColumns">
+      <wsdl:input message="tns:GetQuickFindColumnsSoapIn" />
+      <wsdl:output message="tns:GetQuickFindColumnsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickFindDisplayNameColumns">
+      <wsdl:input message="tns:GetQuickFindDisplayNameColumnsSoapIn" />
+      <wsdl:output message="tns:GetQuickFindDisplayNameColumnsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionDisplayName">
+      <wsdl:input message="tns:GetOptionDisplayNameSoapIn" />
+      <wsdl:output message="tns:GetOptionDisplayNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionDisplayNameXml">
+      <wsdl:input message="tns:GetOptionDisplayNameXmlSoapIn" />
+      <wsdl:output message="tns:GetOptionDisplayNameXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchIncidentEntityFieldList">
+      <wsdl:input message="tns:FetchIncidentEntityFieldListSoapIn" />
+      <wsdl:output message="tns:FetchIncidentEntityFieldListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidStateTransition">
+      <wsdl:input message="tns:IsValidStateTransitionSoapIn" />
+      <wsdl:output message="tns:IsValidStateTransitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidStatusReasonTransition">
+      <wsdl:input message="tns:IsValidStatusReasonTransitionSoapIn" />
+      <wsdl:output message="tns:IsValidStatusReasonTransitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsEntityRecordValid">
+      <wsdl:input message="tns:IsEntityRecordValidSoapIn" />
+      <wsdl:output message="tns:IsEntityRecordValidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EntityRecordErrorNotification">
+      <wsdl:input message="tns:EntityRecordErrorNotificationSoapIn" />
+      <wsdl:output message="tns:EntityRecordErrorNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConvertRuleId">
+      <wsdl:input message="tns:GetConvertRuleIdSoapIn" />
+      <wsdl:output message="tns:GetConvertRuleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsParentRecordInactive">
+      <wsdl:input message="tns:IsParentRecordInactiveSoapIn" />
+      <wsdl:output message="tns:IsParentRecordInactiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAttributeList">
+      <wsdl:input message="tns:RetrieveAttributeListSoapIn" />
+      <wsdl:output message="tns:RetrieveAttributeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSlaDefault">
+      <wsdl:input message="tns:IsSlaDefaultSoapIn" />
+      <wsdl:output message="tns:IsSlaDefaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSlaIfNoDefaultSlaExists">
+      <wsdl:input message="tns:UpdateSlaIfNoDefaultSlaExistsSoapIn" />
+      <wsdl:output message="tns:UpdateSlaIfNoDefaultSlaExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSlaActive">
+      <wsdl:input message="tns:IsSlaActiveSoapIn" />
+      <wsdl:output message="tns:IsSlaActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQueueMembers">
+      <wsdl:input message="tns:UpdateQueueMembersSoapIn" />
+      <wsdl:output message="tns:UpdateQueueMembersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySpecificTypeCode">
+      <wsdl:input message="tns:GetActivitySpecificTypeCodeSoapIn" />
+      <wsdl:output message="tns:GetActivitySpecificTypeCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageUrl">
+      <wsdl:input message="tns:GetImageUrlSoapIn" />
+      <wsdl:output message="tns:GetImageUrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLookUpImageUrl">
+      <wsdl:input message="tns:GetLookUpImageUrlSoapIn" />
+      <wsdl:output message="tns:GetLookUpImageUrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityQuickCreateOption">
+      <wsdl:input message="tns:GetEntityQuickCreateOptionSoapIn" />
+      <wsdl:output message="tns:GetEntityQuickCreateOptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityCollectionName">
+      <wsdl:input message="tns:GetEntityCollectionNameSoapIn" />
+      <wsdl:output message="tns:GetEntityCollectionNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickFindColumnCollectionForEntityArray">
+      <wsdl:input message="tns:GetQuickFindColumnCollectionForEntityArraySoapIn" />
+      <wsdl:output message="tns:GetQuickFindColumnCollectionForEntityArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferencedEntityName">
+      <wsdl:input message="tns:GetReferencedEntityNameSoapIn" />
+      <wsdl:output message="tns:GetReferencedEntityNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalFacets">
+      <wsdl:input message="tns:GetLocalFacetsSoapIn" />
+      <wsdl:output message="tns:GetLocalFacetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferencedEntityImageColumnName">
+      <wsdl:input message="tns:GetReferencedEntityImageColumnNameSoapIn" />
+      <wsdl:output message="tns:GetReferencedEntityImageColumnNameSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerServiceSoap" type="tns:CustomerServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveArticleComment">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SaveArticleComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveContractCalendar">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SaveContractCalendar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelCase">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CancelCase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolveCase">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ResolveCase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCaseResolutionDefaults">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveCaseResolutionDefaults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRefreshFormAccessible">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsRefreshFormAccessible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenewEntitlement">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RenewEntitlement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickFindColumns">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQuickFindColumns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickFindDisplayNameColumns">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQuickFindDisplayNameColumns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionDisplayName">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetOptionDisplayName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionDisplayNameXml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetOptionDisplayNameXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchIncidentEntityFieldList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/FetchIncidentEntityFieldList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidStateTransition">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsValidStateTransition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidStatusReasonTransition">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsValidStatusReasonTransition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEntityRecordValid">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsEntityRecordValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EntityRecordErrorNotification">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/EntityRecordErrorNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConvertRuleId">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetConvertRuleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsParentRecordInactive">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsParentRecordInactive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAttributeList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveAttributeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSlaDefault">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsSlaDefault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSlaIfNoDefaultSlaExists">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateSlaIfNoDefaultSlaExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSlaActive">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsSlaActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQueueMembers">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateQueueMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySpecificTypeCode">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetActivitySpecificTypeCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageUrl">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetImageUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookUpImageUrl">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetLookUpImageUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityQuickCreateOption">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityQuickCreateOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityCollectionName">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityCollectionName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickFindColumnCollectionForEntityArray">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQuickFindColumnCollectionForEntityArray" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferencedEntityName">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetReferencedEntityName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalFacets">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetLocalFacets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferencedEntityImageColumnName">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetReferencedEntityImageColumnName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomerServiceSoap12" type="tns:CustomerServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveArticleComment">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SaveArticleComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveContractCalendar">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SaveContractCalendar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelCase">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CancelCase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolveCase">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ResolveCase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCaseResolutionDefaults">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveCaseResolutionDefaults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRefreshFormAccessible">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsRefreshFormAccessible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenewEntitlement">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RenewEntitlement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickFindColumns">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQuickFindColumns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickFindDisplayNameColumns">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQuickFindDisplayNameColumns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionDisplayName">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetOptionDisplayName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionDisplayNameXml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetOptionDisplayNameXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchIncidentEntityFieldList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/FetchIncidentEntityFieldList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidStateTransition">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsValidStateTransition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidStatusReasonTransition">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsValidStatusReasonTransition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEntityRecordValid">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsEntityRecordValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EntityRecordErrorNotification">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/EntityRecordErrorNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConvertRuleId">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetConvertRuleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsParentRecordInactive">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsParentRecordInactive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAttributeList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveAttributeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSlaDefault">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsSlaDefault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSlaIfNoDefaultSlaExists">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateSlaIfNoDefaultSlaExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSlaActive">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsSlaActive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQueueMembers">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateQueueMembers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySpecificTypeCode">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetActivitySpecificTypeCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageUrl">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetImageUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookUpImageUrl">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetLookUpImageUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityQuickCreateOption">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityQuickCreateOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityCollectionName">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityCollectionName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickFindColumnCollectionForEntityArray">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQuickFindColumnCollectionForEntityArray" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferencedEntityName">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetReferencedEntityName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalFacets">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetLocalFacets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferencedEntityImageColumnName">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetReferencedEntityImageColumnName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerService">
+    <wsdl:port name="CustomerServiceSoap" binding="tns:CustomerServiceSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/CustomerService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CustomerServiceSoap12" binding="tns:CustomerServiceSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/CustomerService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

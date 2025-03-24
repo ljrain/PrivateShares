@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:element name="RetrieveChildrenAroundHeroNode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="etc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="parent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hero" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveChildrenAroundHeroNodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveChildrenAroundHeroNodeResult" type="tns:HierarchyData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HierarchyData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RelationshipData" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrieveChildren">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="etc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="parent" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="childrenCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveChildrenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveChildrenResult" type="tns:HierarchyData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAncestors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="etc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="node" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAncestorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAncestorsResult" type="tns:HierarchyData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveRootTree">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="etc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="node" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveRootTreeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveRootTreeResult" type="tns:HierarchyData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveSubtree">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="etc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hero" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rootDepth" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveSubtreeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveSubtreeResult" type="tns:HierarchyData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveSibling">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="etc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="parentNodeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relativeNodeId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isLeftSibling" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveSiblingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveSiblingResult" type="tns:HierarchyData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiblingCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="etc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="parentId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relativeId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isLeft" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiblingCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSiblingCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsRecordHierarchyEnabled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="etc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsRecordHierarchyEnabledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsRecordHierarchyEnabledResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveChildrenAroundHeroNodeSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveChildrenAroundHeroNode" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveChildrenAroundHeroNodeSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveChildrenAroundHeroNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveChildrenSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveChildren" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveChildrenSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveChildrenResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAncestorsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAncestors" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAncestorsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAncestorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRootTreeSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveRootTree" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRootTreeSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveRootTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveSubtreeSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveSubtree" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveSubtreeSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveSubtreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveSiblingSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveSibling" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveSiblingSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveSiblingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiblingCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiblingCount" />
+  </wsdl:message>
+  <wsdl:message name="GetSiblingCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiblingCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsRecordHierarchyEnabledSoapIn">
+    <wsdl:part name="parameters" element="tns:IsRecordHierarchyEnabled" />
+  </wsdl:message>
+  <wsdl:message name="IsRecordHierarchyEnabledSoapOut">
+    <wsdl:part name="parameters" element="tns:IsRecordHierarchyEnabledResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HierarchyDataServiceSoap">
+    <wsdl:operation name="RetrieveChildrenAroundHeroNode">
+      <wsdl:input message="tns:RetrieveChildrenAroundHeroNodeSoapIn" />
+      <wsdl:output message="tns:RetrieveChildrenAroundHeroNodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveChildren">
+      <wsdl:input message="tns:RetrieveChildrenSoapIn" />
+      <wsdl:output message="tns:RetrieveChildrenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAncestors">
+      <wsdl:input message="tns:RetrieveAncestorsSoapIn" />
+      <wsdl:output message="tns:RetrieveAncestorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRootTree">
+      <wsdl:input message="tns:RetrieveRootTreeSoapIn" />
+      <wsdl:output message="tns:RetrieveRootTreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSubtree">
+      <wsdl:input message="tns:RetrieveSubtreeSoapIn" />
+      <wsdl:output message="tns:RetrieveSubtreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSibling">
+      <wsdl:input message="tns:RetrieveSiblingSoapIn" />
+      <wsdl:output message="tns:RetrieveSiblingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiblingCount">
+      <wsdl:input message="tns:GetSiblingCountSoapIn" />
+      <wsdl:output message="tns:GetSiblingCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsRecordHierarchyEnabled">
+      <wsdl:input message="tns:IsRecordHierarchyEnabledSoapIn" />
+      <wsdl:output message="tns:IsRecordHierarchyEnabledSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HierarchyDataServiceSoap" type="tns:HierarchyDataServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveChildrenAroundHeroNode">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveChildrenAroundHeroNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveChildren">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveChildren" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAncestors">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveAncestors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRootTree">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveRootTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSubtree">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveSubtree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSibling">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveSibling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiblingCount">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSiblingCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRecordHierarchyEnabled">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsRecordHierarchyEnabled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HierarchyDataServiceSoap12" type="tns:HierarchyDataServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveChildrenAroundHeroNode">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveChildrenAroundHeroNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveChildren">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveChildren" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAncestors">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveAncestors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRootTree">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveRootTree" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSubtree">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveSubtree" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSibling">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveSibling" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiblingCount">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSiblingCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRecordHierarchyEnabled">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsRecordHierarchyEnabled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HierarchyDataService">
+    <wsdl:port name="HierarchyDataServiceSoap" binding="tns:HierarchyDataServiceSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/HierarchyDataService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HierarchyDataServiceSoap12" binding="tns:HierarchyDataServiceSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/HierarchyDataService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

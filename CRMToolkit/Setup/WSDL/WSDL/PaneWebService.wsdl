@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:element name="GetSortedVisualizationList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityLogicalName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parametersXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSortedVisualizationListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSortedVisualizationListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteVisualization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="visualizationId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteVisualizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteVisualizationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SwitchMode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paneMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vizPanePrimaryEntityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vizPaneViewId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vizPaneViewType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vizId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vizType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="layoutXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paneLayout" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vizPaneId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SwitchModeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SwitchModeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveChart">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="saveAs" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="presentationXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="visualizationType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sourceVisualizationType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="visualizationId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkDuplicate" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveChartResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveChartResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportChart">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="visualizationType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="visualizationId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="visualizationXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entityLogicalName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkDuplicate" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportChartResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportChartResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSortedVisualizationListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSortedVisualizationList" />
+  </wsdl:message>
+  <wsdl:message name="GetSortedVisualizationListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSortedVisualizationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteVisualizationSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteVisualization" />
+  </wsdl:message>
+  <wsdl:message name="DeleteVisualizationSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteVisualizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SwitchModeSoapIn">
+    <wsdl:part name="parameters" element="tns:SwitchMode" />
+  </wsdl:message>
+  <wsdl:message name="SwitchModeSoapOut">
+    <wsdl:part name="parameters" element="tns:SwitchModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveChartSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveChart" />
+  </wsdl:message>
+  <wsdl:message name="SaveChartSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveChartResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportChartSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportChart" />
+  </wsdl:message>
+  <wsdl:message name="ImportChartSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportChartResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PaneWebServiceSoap">
+    <wsdl:operation name="GetSortedVisualizationList">
+      <wsdl:input message="tns:GetSortedVisualizationListSoapIn" />
+      <wsdl:output message="tns:GetSortedVisualizationListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVisualization">
+      <wsdl:input message="tns:DeleteVisualizationSoapIn" />
+      <wsdl:output message="tns:DeleteVisualizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SwitchMode">
+      <wsdl:input message="tns:SwitchModeSoapIn" />
+      <wsdl:output message="tns:SwitchModeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveChart">
+      <wsdl:input message="tns:SaveChartSoapIn" />
+      <wsdl:output message="tns:SaveChartSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportChart">
+      <wsdl:input message="tns:ImportChartSoapIn" />
+      <wsdl:output message="tns:ImportChartSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PaneWebServiceSoap" type="tns:PaneWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSortedVisualizationList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSortedVisualizationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVisualization">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteVisualization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwitchMode">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SwitchMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChart">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SaveChart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportChart">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ImportChart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PaneWebServiceSoap12" type="tns:PaneWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSortedVisualizationList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetSortedVisualizationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVisualization">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteVisualization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwitchMode">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SwitchMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChart">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SaveChart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportChart">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ImportChart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PaneWebService">
+    <wsdl:port name="PaneWebServiceSoap" binding="tns:PaneWebServiceSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/PaneWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PaneWebServiceSoap12" binding="tns:PaneWebServiceSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/PaneWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

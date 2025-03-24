@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:element name="RetrieveDefaultMailboxId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objectId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="objectTypeCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDefaultMailboxIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveDefaultMailboxIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveServiceAccountMailboxId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailServerProfileId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveServiceAccountMailboxIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveServiceAccountMailboxIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsMailboxEnabledForOutgoing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="regardingObjectId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="regardingObjectTypeCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsMailboxEnabledForOutgoingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsMailboxEnabledForOutgoingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsTestAccessRunning">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mailboxId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsTestAccessRunningResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsTestAccessRunningResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitApplyMailboxSettingsJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fetchXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="actionMask" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitApplyMailboxSettingsJobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitApplyMailboxSettingsJobResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailboxStatusCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fetchXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailboxStatusCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMailboxStatusCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToggleVerboseLogging">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mailboxIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToggleVerboseLoggingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ToggleVerboseLoggingResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToggleMailboxStatistics">
+        <s:complexType />
+      </s:element>
+      <s:element name="ToggleMailboxStatisticsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ToggleMailboxStatisticsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsTestAccessRunningOrScheduled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mailboxId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsTestAccessRunningOrScheduledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsTestAccessRunningOrScheduledResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleCRMAppInstallForAllUsers">
+        <s:complexType />
+      </s:element>
+      <s:element name="ScheduleCRMAppInstallForAllUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScheduleCRMAppInstallForAllUsersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIsOfficeAppsAutoDeploymentSetting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="enableAutoDeployForAllUsers" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIsOfficeAppsAutoDeploymentSettingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateIsOfficeAppsAutoDeploymentSettingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAppForOutlookForCurrentUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reAdd" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAppForOutlookForCurrentUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddAppForOutlookForCurrentUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleCRMAppInstallForSelectedUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="selectedMailboxIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleCRMAppInstallForSelectedUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScheduleCRMAppInstallForSelectedUsersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckifO365UserHasExchangeSubscriptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mailboxId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckifO365UserHasExchangeSubscriptionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckifO365UserHasExchangeSubscriptionsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckO365UsersExchangeSubscriptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mailboxIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckO365UsersExchangeSubscriptionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckO365UsersExchangeSubscriptionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTenantAdminEmailAddresses">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTenantAdminEmailAddressesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTenantAdminEmailAddressesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnapprovedMailboxEmailAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fetchXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnapprovedMailboxEmailAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnapprovedMailboxEmailAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mailboxIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptionsResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveDefaultMailboxIdSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveDefaultMailboxId" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDefaultMailboxIdSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveDefaultMailboxIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveServiceAccountMailboxIdSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveServiceAccountMailboxId" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveServiceAccountMailboxIdSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveServiceAccountMailboxIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsMailboxEnabledForOutgoingSoapIn">
+    <wsdl:part name="parameters" element="tns:IsMailboxEnabledForOutgoing" />
+  </wsdl:message>
+  <wsdl:message name="IsMailboxEnabledForOutgoingSoapOut">
+    <wsdl:part name="parameters" element="tns:IsMailboxEnabledForOutgoingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsTestAccessRunningSoapIn">
+    <wsdl:part name="parameters" element="tns:IsTestAccessRunning" />
+  </wsdl:message>
+  <wsdl:message name="IsTestAccessRunningSoapOut">
+    <wsdl:part name="parameters" element="tns:IsTestAccessRunningResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitApplyMailboxSettingsJobSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitApplyMailboxSettingsJob" />
+  </wsdl:message>
+  <wsdl:message name="SubmitApplyMailboxSettingsJobSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitApplyMailboxSettingsJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMailboxStatusCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMailboxStatusCount" />
+  </wsdl:message>
+  <wsdl:message name="GetMailboxStatusCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMailboxStatusCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToggleVerboseLoggingSoapIn">
+    <wsdl:part name="parameters" element="tns:ToggleVerboseLogging" />
+  </wsdl:message>
+  <wsdl:message name="ToggleVerboseLoggingSoapOut">
+    <wsdl:part name="parameters" element="tns:ToggleVerboseLoggingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToggleMailboxStatisticsSoapIn">
+    <wsdl:part name="parameters" element="tns:ToggleMailboxStatistics" />
+  </wsdl:message>
+  <wsdl:message name="ToggleMailboxStatisticsSoapOut">
+    <wsdl:part name="parameters" element="tns:ToggleMailboxStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsTestAccessRunningOrScheduledSoapIn">
+    <wsdl:part name="parameters" element="tns:IsTestAccessRunningOrScheduled" />
+  </wsdl:message>
+  <wsdl:message name="IsTestAccessRunningOrScheduledSoapOut">
+    <wsdl:part name="parameters" element="tns:IsTestAccessRunningOrScheduledResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleCRMAppInstallForAllUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:ScheduleCRMAppInstallForAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleCRMAppInstallForAllUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:ScheduleCRMAppInstallForAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIsOfficeAppsAutoDeploymentSettingSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateIsOfficeAppsAutoDeploymentSetting" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIsOfficeAppsAutoDeploymentSettingSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateIsOfficeAppsAutoDeploymentSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAppForOutlookForCurrentUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAppForOutlookForCurrentUser" />
+  </wsdl:message>
+  <wsdl:message name="AddAppForOutlookForCurrentUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAppForOutlookForCurrentUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleCRMAppInstallForSelectedUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:ScheduleCRMAppInstallForSelectedUsers" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleCRMAppInstallForSelectedUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:ScheduleCRMAppInstallForSelectedUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckifO365UserHasExchangeSubscriptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckifO365UserHasExchangeSubscriptions" />
+  </wsdl:message>
+  <wsdl:message name="CheckifO365UserHasExchangeSubscriptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckifO365UserHasExchangeSubscriptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckO365UsersExchangeSubscriptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckO365UsersExchangeSubscriptions" />
+  </wsdl:message>
+  <wsdl:message name="CheckO365UsersExchangeSubscriptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckO365UsersExchangeSubscriptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTenantAdminEmailAddressesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTenantAdminEmailAddresses" />
+  </wsdl:message>
+  <wsdl:message name="GetTenantAdminEmailAddressesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTenantAdminEmailAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnapprovedMailboxEmailAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnapprovedMailboxEmailAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetUnapprovedMailboxEmailAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnapprovedMailboxEmailAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptions" />
+  </wsdl:message>
+  <wsdl:message name="UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptionsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MailboxServiceSoap">
+    <wsdl:operation name="RetrieveDefaultMailboxId">
+      <wsdl:input message="tns:RetrieveDefaultMailboxIdSoapIn" />
+      <wsdl:output message="tns:RetrieveDefaultMailboxIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveServiceAccountMailboxId">
+      <wsdl:input message="tns:RetrieveServiceAccountMailboxIdSoapIn" />
+      <wsdl:output message="tns:RetrieveServiceAccountMailboxIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMailboxEnabledForOutgoing">
+      <wsdl:input message="tns:IsMailboxEnabledForOutgoingSoapIn" />
+      <wsdl:output message="tns:IsMailboxEnabledForOutgoingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTestAccessRunning">
+      <wsdl:input message="tns:IsTestAccessRunningSoapIn" />
+      <wsdl:output message="tns:IsTestAccessRunningSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitApplyMailboxSettingsJob">
+      <wsdl:input message="tns:SubmitApplyMailboxSettingsJobSoapIn" />
+      <wsdl:output message="tns:SubmitApplyMailboxSettingsJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMailboxStatusCount">
+      <wsdl:input message="tns:GetMailboxStatusCountSoapIn" />
+      <wsdl:output message="tns:GetMailboxStatusCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToggleVerboseLogging">
+      <wsdl:input message="tns:ToggleVerboseLoggingSoapIn" />
+      <wsdl:output message="tns:ToggleVerboseLoggingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToggleMailboxStatistics">
+      <wsdl:input message="tns:ToggleMailboxStatisticsSoapIn" />
+      <wsdl:output message="tns:ToggleMailboxStatisticsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTestAccessRunningOrScheduled">
+      <wsdl:input message="tns:IsTestAccessRunningOrScheduledSoapIn" />
+      <wsdl:output message="tns:IsTestAccessRunningOrScheduledSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleCRMAppInstallForAllUsers">
+      <wsdl:input message="tns:ScheduleCRMAppInstallForAllUsersSoapIn" />
+      <wsdl:output message="tns:ScheduleCRMAppInstallForAllUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIsOfficeAppsAutoDeploymentSetting">
+      <wsdl:input message="tns:UpdateIsOfficeAppsAutoDeploymentSettingSoapIn" />
+      <wsdl:output message="tns:UpdateIsOfficeAppsAutoDeploymentSettingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAppForOutlookForCurrentUser">
+      <wsdl:input message="tns:AddAppForOutlookForCurrentUserSoapIn" />
+      <wsdl:output message="tns:AddAppForOutlookForCurrentUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleCRMAppInstallForSelectedUsers">
+      <wsdl:input message="tns:ScheduleCRMAppInstallForSelectedUsersSoapIn" />
+      <wsdl:output message="tns:ScheduleCRMAppInstallForSelectedUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckifO365UserHasExchangeSubscriptions">
+      <wsdl:input message="tns:CheckifO365UserHasExchangeSubscriptionsSoapIn" />
+      <wsdl:output message="tns:CheckifO365UserHasExchangeSubscriptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckO365UsersExchangeSubscriptions">
+      <wsdl:input message="tns:CheckO365UsersExchangeSubscriptionsSoapIn" />
+      <wsdl:output message="tns:CheckO365UsersExchangeSubscriptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTenantAdminEmailAddresses">
+      <wsdl:input message="tns:GetTenantAdminEmailAddressesSoapIn" />
+      <wsdl:output message="tns:GetTenantAdminEmailAddressesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnapprovedMailboxEmailAddress">
+      <wsdl:input message="tns:GetUnapprovedMailboxEmailAddressSoapIn" />
+      <wsdl:output message="tns:GetUnapprovedMailboxEmailAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptions">
+      <wsdl:input message="tns:UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptionsSoapIn" />
+      <wsdl:output message="tns:UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptionsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MailboxServiceSoap" type="tns:MailboxServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveDefaultMailboxId">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveDefaultMailboxId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveServiceAccountMailboxId">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveServiceAccountMailboxId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMailboxEnabledForOutgoing">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsMailboxEnabledForOutgoing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTestAccessRunning">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsTestAccessRunning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitApplyMailboxSettingsJob">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SubmitApplyMailboxSettingsJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailboxStatusCount">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetMailboxStatusCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToggleVerboseLogging">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ToggleVerboseLogging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToggleMailboxStatistics">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ToggleMailboxStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTestAccessRunningOrScheduled">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsTestAccessRunningOrScheduled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleCRMAppInstallForAllUsers">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ScheduleCRMAppInstallForAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIsOfficeAppsAutoDeploymentSetting">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateIsOfficeAppsAutoDeploymentSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAppForOutlookForCurrentUser">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AddAppForOutlookForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleCRMAppInstallForSelectedUsers">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ScheduleCRMAppInstallForSelectedUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckifO365UserHasExchangeSubscriptions">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CheckifO365UserHasExchangeSubscriptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckO365UsersExchangeSubscriptions">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CheckO365UsersExchangeSubscriptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTenantAdminEmailAddresses">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetTenantAdminEmailAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnapprovedMailboxEmailAddress">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetUnapprovedMailboxEmailAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptions">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MailboxServiceSoap12" type="tns:MailboxServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveDefaultMailboxId">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveDefaultMailboxId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveServiceAccountMailboxId">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveServiceAccountMailboxId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMailboxEnabledForOutgoing">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsMailboxEnabledForOutgoing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTestAccessRunning">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsTestAccessRunning" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitApplyMailboxSettingsJob">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SubmitApplyMailboxSettingsJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailboxStatusCount">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetMailboxStatusCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToggleVerboseLogging">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ToggleVerboseLogging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToggleMailboxStatistics">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ToggleMailboxStatistics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTestAccessRunningOrScheduled">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsTestAccessRunningOrScheduled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleCRMAppInstallForAllUsers">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ScheduleCRMAppInstallForAllUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIsOfficeAppsAutoDeploymentSetting">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateIsOfficeAppsAutoDeploymentSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAppForOutlookForCurrentUser">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AddAppForOutlookForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleCRMAppInstallForSelectedUsers">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ScheduleCRMAppInstallForSelectedUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckifO365UserHasExchangeSubscriptions">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CheckifO365UserHasExchangeSubscriptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckO365UsersExchangeSubscriptions">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CheckO365UsersExchangeSubscriptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTenantAdminEmailAddresses">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetTenantAdminEmailAddresses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnapprovedMailboxEmailAddress">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetUnapprovedMailboxEmailAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptions">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UnapproveMailboxIfO365UserDoesNotHaveExchangeSubscriptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MailboxService">
+    <wsdl:port name="MailboxServiceSoap" binding="tns:MailboxServiceSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/MailboxService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MailboxServiceSoap12" binding="tns:MailboxServiceSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/MailboxService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

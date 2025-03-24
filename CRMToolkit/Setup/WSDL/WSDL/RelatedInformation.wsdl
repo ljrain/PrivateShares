@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetContextHtml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="context" type="tns:Context" />
+            <s:element minOccurs="0" maxOccurs="1" name="formXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formSubmitId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Context">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TabIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FormObjectType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FormId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="FormType" type="tns:FormType" />
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="FollowUpCategory" type="tns:FollowUpCategory" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResourceSpecificationTreeCategory" type="tns:ResourceSpecificationTreeCategory" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipsCategory" type="tns:TipsCategory" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeCodeMapping" type="tns:TypeCodeMapping" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerPreferencesListCategory" type="tns:CustomerPreferencesListCategory" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkflowRelatedCategory" type="tns:WorkflowRelatedCategory" />
+            <s:element minOccurs="0" maxOccurs="1" name="DynamicApiListCategory" type="tns:DynamicApiListCategory" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextCategory" type="tns:TextCategory" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubjectTreeCategory" type="tns:SubjectTreeCategory" />
+            <s:element minOccurs="0" maxOccurs="1" name="LookupList" type="tns:LookupList" />
+            <s:element minOccurs="0" maxOccurs="1" name="FetchListCategory" type="tns:FetchListCategory" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiListCategory" type="tns:ApiListCategory" />
+          </s:choice>
+          <s:element minOccurs="0" maxOccurs="1" name="ContextId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ControlId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderIndex" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="FormType">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="AppointmentBook" />
+          <s:enumeration value="Hardcoded" />
+          <s:enumeration value="Main" />
+          <s:enumeration value="MiniCampaignBO" />
+          <s:enumeration value="Preview" />
+          <s:enumeration value="Dashboard" />
+          <s:enumeration value="Quick" />
+          <s:enumeration value="Mobile" />
+          <s:enumeration value="Read" />
+          <s:enumeration value="QuickCreate" />
+          <s:enumeration value="Dialog" />
+          <s:enumeration value="Card" />
+          <s:enumeration value="MainInteractionCentric" />
+          <s:enumeration value="TaskBasedForm" />
+          <s:enumeration value="InteractionCentricDashboard" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="FollowUpCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Category">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="EntityType" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Category" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CssClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderIndex" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LookupList">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Category">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LookupTypes" type="tns:ArrayOfInt" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TextCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Category">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DisplayText" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TipsCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:TextCategory" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="InternalControlCategory" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Category" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="WorkflowRelatedCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:InternalControlCategory">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ReadOnly" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataXml" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="InConditionControl" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityCategory" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:InternalControlCategory">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ObjectType" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DependantFieldNames" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="DependantFieldMap" type="tns:ArrayOfArrayOfString" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SubjectTreeCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityCategory" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ListCategory" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityCategory">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="GridEmptyMessageResourceId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TargetObjectType" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DisplayAttribute" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DisplayField" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ValueField" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="FetchListCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ListCategory">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AutoGeneratedFetchXml" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="FetchXml" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ApiListCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ListCategory">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EntityName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DynamicApiListCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ApiListCategory">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TypeCodeMap" type="tns:ArrayOfAnyType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerPreferencesListCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ListCategory">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="PreferenceType" type="tns:CustomerPreferenceType" />
+              <s:element minOccurs="0" maxOccurs="1" name="ObjectTypes" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="CustomerPreferenceType">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="Resources" />
+          <s:enumeration value="Services" />
+          <s:enumeration value="DayOfTheWeek" />
+          <s:enumeration value="TimeOfDay" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ResourceSpecificationTreeCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityCategory" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TypeCodeMapping">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TypeCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayNameResourceId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RelatedInformationResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ContextHtml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ScriptIncludes" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="StyleIncludes" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientVariables" type="tns:ArrayOfNameValuePair" />
+          <s:element minOccurs="0" maxOccurs="1" name="WrpcTokens" type="tns:ArrayOfNameValuePair" />
+          <s:element minOccurs="1" maxOccurs="1" name="TokenTimestamp" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="InitStatement" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNameValuePair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NameValuePair" nillable="true" type="tns:NameValuePair" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NameValuePair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContextHtmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContextHtmlResult" type="tns:RelatedInformationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetContextHtmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContextHtml" />
+  </wsdl:message>
+  <wsdl:message name="GetContextHtmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContextHtmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RelatedInformationSoap">
+    <wsdl:operation name="GetContextHtml">
+      <wsdl:input message="tns:GetContextHtmlSoapIn" />
+      <wsdl:output message="tns:GetContextHtmlSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RelatedInformationSoap" type="tns:RelatedInformationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetContextHtml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetContextHtml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RelatedInformationSoap12" type="tns:RelatedInformationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetContextHtml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetContextHtml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RelatedInformation">
+    <wsdl:port name="RelatedInformationSoap" binding="tns:RelatedInformationSoap">
+      <soap:address location="http://jemorl.crm.dynamics.com/appwebservices/RelatedInformation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RelatedInformationSoap12" binding="tns:RelatedInformationSoap12">
+      <soap12:address location="http://jemorl.crm.dynamics.com/appwebservices/RelatedInformation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

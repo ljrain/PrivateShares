@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:element name="UploadRecentlyViewed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="recentlyViewedXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="retrieveAfterUpdated" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadRecentlyViewedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadRecentlyViewedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveRecentlyViewedData">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveRecentlyViewedDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveRecentlyViewedDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadRecentlyViewedSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadRecentlyViewed" />
+  </wsdl:message>
+  <wsdl:message name="UploadRecentlyViewedSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadRecentlyViewedResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRecentlyViewedDataSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveRecentlyViewedData" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRecentlyViewedDataSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveRecentlyViewedDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RecentlyViewedWebServiceSoap">
+    <wsdl:operation name="UploadRecentlyViewed">
+      <wsdl:input message="tns:UploadRecentlyViewedSoapIn" />
+      <wsdl:output message="tns:UploadRecentlyViewedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRecentlyViewedData">
+      <wsdl:input message="tns:RetrieveRecentlyViewedDataSoapIn" />
+      <wsdl:output message="tns:RetrieveRecentlyViewedDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RecentlyViewedWebServiceSoap" type="tns:RecentlyViewedWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadRecentlyViewed">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UploadRecentlyViewed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRecentlyViewedData">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveRecentlyViewedData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RecentlyViewedWebServiceSoap12" type="tns:RecentlyViewedWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadRecentlyViewed">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UploadRecentlyViewed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRecentlyViewedData">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveRecentlyViewedData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RecentlyViewedWebService">
+    <wsdl:port name="RecentlyViewedWebServiceSoap" binding="tns:RecentlyViewedWebServiceSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/RecentlyViewedWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RecentlyViewedWebServiceSoap12" binding="tns:RecentlyViewedWebServiceSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/RecentlyViewedWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

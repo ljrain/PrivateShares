@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<configsettings>
+	<msods value="true" />
+	<authentication type="onlinefederation" />
+	<crmonlinedllpath value="{ToolkitPath}\CRM_Perf_Toolkit\CRMOnline\bin\Debug\CRMOnline.dll, CRMOnline.EntityManagerOnline" />
+	<ignoretokencheck value="true"/>
+	<trace value="false"/>
+	<webservicens value="http://schemas.microsoft.com/crm/2009/WebServices"/>
+	<crmdomain value="{DOMAINNAME}"/>
+	<runas userid="{DOMAINADMIN}" password="{DOMAINPASSWORD}"/>
+	<emsqlcnn value="Application Name=CRM_Perf_BenchMark;Server={EMSQLServer};Initial Catalog='EntityManager{ORGNAME}';Integrated Security=sspi"/>
+	<reportserver value="http://{SERVERNAME}"/>
+	<parsedependentrequests value="false"/>
+	<bandwidthcapture value="false">
+	<netcapdir value="C:\Program Files\Support Tools"/>
+	<bandwidthoutputdir value="C:\CRMToolkit\CRM_Perf_Toolkit\BandwidthTestResults"/>
+	</bandwidthcapture>
+	<outlooksyncdir value="c:\outlooksyncdata"/>
+	<exchangepassword value="{DOMAINPASSWORD}"/>
+  	<turboformsenabled value="true"/>
+
+	<crmservers>
+		<crmserver>
+			<serverbaseurl value="https://{ORGNAME}.{CRMDOMAIN}" />
+			<organizationbaseurl value="https://{ORGNAME}.{CRMDOMAIN}" />
+			<organization name="{ORGNAME}"/>
+			<organizationserviceurl value="https://{ORGNAME}.api.{CRMDOMAIN}/XrmServices/2011/Organization.svc" />
+			<discoveryserver value="disco.{CRMDOMAIN}" />
+			<adxenabled value="{ADXENABLED}"/>
+			<passport>
+				<userbase value="{USERBASE}" /><adminuser value="{DOMAINADMIN}" />
+				<start value="{USERSTART}" />
+				<count value="{USERCOUNT}" />
+				<outlookstart value="{USERSTART}" />
+				<outlookcount value="{USERCOUNT}" />
+				<passportdomain value="{DOMAINNAME}" />
+				<password value="{USERPASSWORD}" /> 
+				<partner value="port.{CRMDOMAIN}" />
+			</passport>
+		</crmserver>
+	</crmservers>
+</configsettings>

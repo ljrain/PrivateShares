@@ -1,0 +1,26 @@
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(EnvironmentConfig)" />
+	<ItemGroup>
+		<ProjectFile Include="CommonTypes\BuildCRM\Microsoft.Crm.CommonTypes.csproj">
+			<BuildInParallel>true</BuildInParallel>
+		</ProjectFile>
+		
+		<ProjectFile Include="XrmService\BuildCRM\Microsoft.Crm.XrmService.csproj">
+			<BuildInParallel>true</BuildInParallel>
+		</ProjectFile>
+		
+		<ProjectFile Include="Utility\BuildCRM\Utility.csproj">
+			<BuildInParallel>true</BuildInParallel>
+		</ProjectFile>
+		
+		<ProjectFile Include="DbPopulator\BuildCRM\Microsoft.Crm.DBPopulator.csproj">
+			<BuildInParallel>true</BuildInParallel>
+		</ProjectFile>
+		<!--
+		<ProjectFile Include="MobileOfflineMacroTestSetup\Microsoft.Crm.MobileOfflineMacroTestEnvSetup.csproj">
+			<BuildInParallel>true</BuildInParallel>
+		</ProjectFile>
+		-->
+	</ItemGroup>
+	<Import Project="$(ExtendedTargetsPath)\Traversal.targets " />
+</Project>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(BaseDir)\src\include\Common.props" />
+  <PropertyGroup>
+    <ProjectGuid>{FCA24F1D-E020-414D-981D-A1EB753DFF81}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XrmService</RootNamespace>
+    <AssemblyName>XrmService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <AssemblyOriginatorKeyFile>$(BaseDir)\public\internal\strongnamekeys\fake\CrmTest.snk</AssemblyOriginatorKeyFile>
+    <CoverageDisabled>true</CoverageDisabled>
+  </PropertyGroup>
+  <Import Project="$(ExtendedTargetsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="$(BaseDir)\src\QA\Performance\Toolkit\CRM_Perf_Toolkit\XrmService\XrmServiceCreator.cs" />
+    <QCustomInput Include="$(BaseDir)\src\QA\Performance\Toolkit\CRM_Perf_Toolkit\XrmService\XrmServiceCreator.cs">
+      <Visible>false</Visible>
+    </QCustomInput>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <HintPath>$(PKGEXTSHARED)\$(BuildType)\$(BuildArchitecture)\bin\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <HintPath>$(BASEDIR)\target\$(BuildType)\$(BuildArchitecture)\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Accessibility">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <HintPath>$(BaseDir)\target\$(BuildType)\$(BuildArchitecture)\Accessibility.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Binplace Include="$(TargetDir)\$(TargetFileName)">
+      <DestinationFolder>Drop\$(BuildType)\$(BuildArchitecture)\NonShip\QA\TestCases:Drop\$(BuildType)\$(BuildArchitecture)\NonShip\QA\TestCases\Performance:Drop\$(BuildType)\$(BuildArchitecture)\NonShip\QA\TestCases\Performance\ImportCustomization</DestinationFolder>
+    </Binplace>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(BaseDir)\src\Core\ObjectModel\SdkProxy\Microsoft.Crm.Sdk.Proxy.csproj" Condition="$(BuildProjectReferences)">
+      <Private>$(ProjectReferenceAsPrivate)</Private>
+      <ReferenceOutputAssembly>$(ProjectReferenceEnableRefOutAssembly)</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommonTypes\BuildCrm\Microsoft.Crm.CommonTypes.csproj">
+      <Project>{6bd71ccc-5ccb-4f64-ab14-6b86ece1f1a2}</Project>
+      <Name>CommonTypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

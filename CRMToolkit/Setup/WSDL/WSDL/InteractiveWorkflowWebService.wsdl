@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:element name="CreateSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workflowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="regardingObjectId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="regardingObjectTypeCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndSessionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CancelSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelSessionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNextPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workflowContextXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNextPageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSession" />
+  </wsdl:message>
+  <wsdl:message name="CreateSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="EndSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:EndSession" />
+  </wsdl:message>
+  <wsdl:message name="EndSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:EndSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelSession" />
+  </wsdl:message>
+  <wsdl:message name="CancelSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNextPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNextPage" />
+  </wsdl:message>
+  <wsdl:message name="GetNextPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNextPageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="InteractiveWorkflowWebServiceSoap">
+    <wsdl:operation name="CreateSession">
+      <wsdl:input message="tns:CreateSessionSoapIn" />
+      <wsdl:output message="tns:CreateSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <wsdl:input message="tns:EndSessionSoapIn" />
+      <wsdl:output message="tns:EndSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelSession">
+      <wsdl:input message="tns:CancelSessionSoapIn" />
+      <wsdl:output message="tns:CancelSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextPage">
+      <wsdl:input message="tns:GetNextPageSoapIn" />
+      <wsdl:output message="tns:GetNextPageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InteractiveWorkflowWebServiceSoap" type="tns:InteractiveWorkflowWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateSession">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/EndSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSession">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CancelSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextPage">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetNextPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InteractiveWorkflowWebServiceSoap12" type="tns:InteractiveWorkflowWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateSession">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/EndSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSession">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CancelSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextPage">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetNextPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InteractiveWorkflowWebService">
+    <wsdl:port name="InteractiveWorkflowWebServiceSoap" binding="tns:InteractiveWorkflowWebServiceSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/InteractiveWorkflowWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InteractiveWorkflowWebServiceSoap12" binding="tns:InteractiveWorkflowWebServiceSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/InteractiveWorkflowWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

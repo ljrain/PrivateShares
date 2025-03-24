@@ -1,0 +1,696 @@
+﻿//Contains all kinds of characters:
+
+(汉字 / 漢字; Hànzì), 
+简化字
+宋體/明體; pinyin: Sòngtǐ/Míngtǐ
+katakana (カタカナ or 片仮名). 
+am Freitagabend nach einem harten Arbeitstag und dem üblichen Ärger, der ihn schon seit Jahren immer wieder an seinem Arbeitsplatz plagt, mit fraglicher Freude auf ein Mahl, das seine 
+Yes.  نعم na`am / No.  لا. laa Maybe.  ممكن mumkin. Excuse me.  إسمحلي ismaHli the 'i' at the beginning is swallowed Good morning.  صباح الخير sabaH al-khair Good evening.  مساء الخير masa' al-khair good  جيد jayyid. very good  جيد جدا jayyid jiddan. Never mind.  ليس مهم mish Muhim. None, nothing, nobody.  ما في Maa fii. Hello. (informal)  سلام salaam. Fine, thank you.  بخير ,شكرا bi-khair Shukran What is your name?  ما اسمك sho ismak? Ma Ismuka/sho Ismak? to a male Ma Ismuki/sho Ismik? to a female My name is ______ . اسمي ana Ismi _______ Nice to meet you.  تشرفنا tasharafna lit. "You honor us" You're welcome.  عفوا `afwan Excuse me. (getting attention) لو سمحت lau samaHt Excuse me. (begging pardon)  انا اسفه / انا اسف Ana Aasif (male) Ana Aasifah (female) I'm sorry.  انا اسفه / انا اسف Ana Aasif male Ana Aasifah female 
+
+The following is a sample text in High Hindi, of the Article 1 of the Universal Declaration of Human Rights (by the United Nations):
+ अनुच्छेद 1 — सभी मनुष्यों को गौरव और अधिकारों के मामले में जन्मजात स्वतन्त्रता और समानता प्राप्त है। उन्हें बुद्धि और अन्तरात्मा की देन प्राप्त है और परस्पर उन्हें भाईचारे के भाव से बर्ताव करना चाहिये।
+
+ Further information: Śikṣā
+ 
+Classical Sanskrit distinguishes about 36 phonemes. There is, however, some allophony and the writing systems used for Sanskrit generally indicate this, thus distinguishing 48 sounds.
+ 
+The sounds are traditionally listed in the order vowels (Ach), diphthongs (Hal), anusvara and visarga, plosives (Sparśa) and nasals (starting in the back of the mouth and moving forward), and finally the liquids and fricatives, written in IAST as follows (see the tables below for details):
+ a ā i ī u ū ṛ ṝ ḷ ḹ ; e ai o au ṃ ḥ k kh g gh ṅ; c ch j jh ñ; ṭ ṭh ḍ ḍh ṇ; t th d dh n; p ph b bh m y r l v; ś ṣ s h
+ 梵语（संस्कृता वाक् saṃskṛtā vāk, 簡稱 संस्कृतम् saṃskṛtam）是印欧语系的印度-伊朗語族的印度-雅利安语支的一种语言[3]，是印歐語系最古老的語言之一。和拉丁語一樣，梵語已經成為一種屬於學術和宗教的專門用語。
+ 
+印度教經典《吠陀經》即用梵文寫成。其語法和發音均視作一種宗教儀規而得以絲毫不差地保存下來。19世紀時梵語成為重構印歐諸語言的關鍵語種。有人认为它是梵天的语言
+
+Sanskrit, sözcük olarak cilalanmış, düzenlenmiş, kusursuzlaştırılmış manalarını taşımaktadır.
+ 
+Tarihçesi [değiştir]
+ 
+Tarihçiler Sanskrit'i ilk konuşanların Hindistan, Hazar Denizi ve Ortadoğu'ya kadar yayılan çok geniş bir topluluk olduğunu öne sürer; bazıları da bu lisanın hiçbir zaman dini ve ilmi çevre sınırlarını aşıp, halk tarafından kullanılmadığını iddia etmektedirler.
+ 
+Sanskrit'i konuşanların ilk vatanları Pencap (Yukarı İndus Vadisi)tır. Burada Sanskrit'in en eski şekli olan Veda lisanı ortaya çıkmıştır. M.Ö. 2. bin yılın ilk yarısına tekabül eden dönemde, Veda dili gelişmiş, esneklik kazanmıştır. M.Ö. 1. bin yılda, Ganj Vadisine kadar yayılan Hint- Ari topluluğu bu lisanı iyice benimsemiş ve daha sonra da Prakrit denilen dil ortaya çıkmıştır. Bu arada komşu kültürlerden birçok sözcük ve kullanılış şekli de Sanskrit'e karışmıştır.
+Varhaisin sanskritin kielioppi on Pāṇinin 400-luvun tienoilla eaa. kirjoittama Aṣṭādhyāyī, joka kuvaa sanskritin rakenteen matemaattisen täsmällisesti 3 959 säännön avulla. Pāṇinin kielioppia pidetään edelleen korkeimpana auktoriteettina kielen suhteen, ja myöhemmät kieliopit ovat lähes yksinomaan sen kommentaareja. Kielioppi sisältää oivalluksia, jotka länsimainen kielitiede teki vasta 1900-luvulla, ja esimerkiksi sen säännöt vastaavat täsmällisyydeltään tietokoneiden ohjelmointikielten kuvaukseen käytettyä Backus-Naur-muotoa (BNF).
+Pagkakahambing
+ 
+
+
+Pamilya
+ 
+
+
+ina
+ 
+ama
+ 
+babaeng anak
+ 
+lalakeng anak
+ 
+lalakeng kapatid
+ 
+babaeng kapatid
+ 
+
+
+
+
+mātṛ
+ 
+pitṛ
+ 
+duhitṛ
+ 
+sūnu
+ 
+bhrātṛ
+ 
+svāsṛ
+ 
+śvaśura
+ 
+vidvā
+ 
+
+
+mater
+ 
+pater
+ 
+filia (daughter/θυγάτηρ)
+ 
+filius (son)
+ 
+frater
+ 
+soror
+ 
+socer
+ 
+vidua
+ Sanskrt ili sanskrit (saṃskṛtam संस्कृतम्) je klasični jezik Indije, odnosno liturgijski jezik u hinduizmu, budizmu i džainizmu.
+ 
+U Aziji ima status sličan latinskom i grčkom jeziku u Evropi.
+ 
+U Indiji predstavlja jedan od službenih jezika, iako su češće u upotrebi noviji jezici. Iako ga mnogi smatraju mrtvim jezikom, još uvijek se uči i koristi kao svakodnevni govor u nekim indijskim zajednicama.
+
+Санскрит әдәбияты шигърият, драма белән бер рәттән фәнни, техник, философик һәм һиндуизм дини текстларын эченә кертә. Санскрит һиндуизм дини ритуалларында мантра һәм гимн формасында церемониаль тел буларак киң кулланыла. Сөйләм санскрит Һиндстанның кайбер традицион учреждениеләрендә кулланыла һәм бу телне торгызырга көч куела.
+
+ (ואינם מוזחים משָם בנטייה). למשל:
+      ברית אאע"ה (=ברית אברהם אבינו עליו השלום); עכו"ם (=עובד כוכבים ומזלות; 
+      ולא עכ"ום); ש"ץ (=שליח ציבור; וראו הערה ג להלן); הרמב"ם (=הרב משה בן מימון). 
+      ובנטייה: ח"כים, תנ"כיכם, רמטכ"לים, רס"ריות
+
+	  Tiếng Phạn (zh. Phạm/Phạn ngữ 梵語; sa. saṃskṛtā vāk संस्कृता वाक्, hoặc ngắn hơn là saṃskṛtam संस्कृतम्) là một cổ ngữ của Ấn Độ còn gọi là bắc Phạn để phân biệt với tiếng Pali là nam Phạn và là một ngôn ngữ tế lễ của các tôn giáo như Ấn Độ giáo, Phật giáo Bắc Tông và Jaina giáo. Nó có một vị trí quan trọng trong văn hóa Ấn Độ và các văn hóa vùng Đông Nam Á tương tự như vị trí của tiếng Latinh và tiếng Hy Lạp trong châu Âu Trung Cổ; nó cũng là kết cấu trọng điểm của truyền thống Ấn giáo/Phệ-đà, nhưng ở một mức độ cao cấp hơn. Ngày nay nó là một trong nhiều ngôn ngữ chính thức của Ấn Độ, mặc dù tiếng Hindi (hindī हिन्दी) và các thứ tiếng địa phương khác ngày càng được dùng phổ biến.
+ 
+Khác với quan niệm phổ biến, tiếng Phạn không phải là một ngôn ngữ chết. Nó vẫn còn được dạy trong các trường học và tại gia khắp nước Ấn, tuy chỉ là ngôn ngữ thứ hai. Một số người Bà-la-môn vẫn xem tiếng Phạn là tiếng mẹ đẻ. Theo một thông tin gần đây, tiếng Phạn được phục hưng như một tiếng địa phương thực dụng tại làng Mattur gần Shimoga, Karnataka
+
+
+سے سرکاری سطح پر کافی کوششیں کی جاری رہی ہیں۔ کالی داس اور سور داس سنسکرت کے بڑے شاعر اور عالم گزرے ہیں۔
+ 
+کہا جاتا ہے کہ یہ زبان صرف اپنی سختیون کی وجہ سے اپنا وجود کھو دی۔
+ 
+ہندیوروپی٫ سو کے قریب زبانوں کا ایک خاندان ہے انھیں ایک خاندان میں ان کی خصوصیات کی بنا پر رکھا گیا ہے۔ انڈو یورپین زبانوں کے خاندان کے بولنے والوں کی تعداد دنیا میں کسی بھی اور زبانوں کے خاندان کے بولنے والوں سے زیادہ ہے۔ جغرافیائی لحاظ سے بھی زبانوں کا یہ خاندان دنیا کے ایکوسیع رقبہ پر پھیلا ہوا ہے۔
+ 
+اس خاندان کی اہم زبانیں [اردو]، بنگالی، ہندی، پنجابی، پشتو، فارسی، کرد، روسی، جرمن، فرانسیسی، دانش، ولندیزی اور انگریزی ہیں۔
+ 
+سنسکرت اسی کی اک شاخ ہے
+ 
+
+
+
+[ترمیم] رسم الخط
+ 
+[ترمیم] بیرونی روابط
+ Sanskrit
+ Sanskrit Tutor
+ Online Sanskrit Dictionary
+ American Sanskrit Institute
+ 
+
+
+
+
+
+زمرہ جات: زبانیں | ہندو مت | آریائی زبانیں | سنسکرت
+
+//Contains all kinds of characters:
+
+(汉字 / 漢字; Hànzì), 
+简化字
+宋體/明體; pinyin: Sòngtǐ/Míngtǐ
+katakana (カタカナ or 片仮名). 
+am Freitagabend nach einem harten Arbeitstag und dem üblichen Ärger, der ihn schon seit Jahren immer wieder an seinem Arbeitsplatz plagt, mit fraglicher Freude auf ein Mahl, das seine 
+Yes.  نعم na`am / No.  لا. laa Maybe.  ممكن mumkin. Excuse me.  إسمحلي ismaHli the 'i' at the beginning is swallowed Good morning.  صباح الخير sabaH al-khair Good evening.  مساء الخير masa' al-khair good  جيد jayyid. very good  جيد جدا jayyid jiddan. Never mind.  ليس مهم mish Muhim. None, nothing, nobody.  ما في Maa fii. Hello. (informal)  سلام salaam. Fine, thank you.  بخير ,شكرا bi-khair Shukran What is your name?  ما اسمك sho ismak? Ma Ismuka/sho Ismak? to a male Ma Ismuki/sho Ismik? to a female My name is ______ . اسمي ana Ismi _______ Nice to meet you.  تشرفنا tasharafna lit. "You honor us" You're welcome.  عفوا `afwan Excuse me. (getting attention) لو سمحت lau samaHt Excuse me. (begging pardon)  انا اسفه / انا اسف Ana Aasif (male) Ana Aasifah (female) I'm sorry.  انا اسفه / انا اسف Ana Aasif male Ana Aasifah female 
+
+The following is a sample text in High Hindi, of the Article 1 of the Universal Declaration of Human Rights (by the United Nations):
+ अनुच्छेद 1 — सभी मनुष्यों को गौरव और अधिकारों के मामले में जन्मजात स्वतन्त्रता और समानता प्राप्त है। उन्हें बुद्धि और अन्तरात्मा की देन प्राप्त है और परस्पर उन्हें भाईचारे के भाव से बर्ताव करना चाहिये।
+
+ Further information: Śikṣā
+ 
+Classical Sanskrit distinguishes about 36 phonemes. There is, however, some allophony and the writing systems used for Sanskrit generally indicate this, thus distinguishing 48 sounds.
+ 
+The sounds are traditionally listed in the order vowels (Ach), diphthongs (Hal), anusvara and visarga, plosives (Sparśa) and nasals (starting in the back of the mouth and moving forward), and finally the liquids and fricatives, written in IAST as follows (see the tables below for details):
+ a ā i ī u ū ṛ ṝ ḷ ḹ ; e ai o au ṃ ḥ k kh g gh ṅ; c ch j jh ñ; ṭ ṭh ḍ ḍh ṇ; t th d dh n; p ph b bh m y r l v; ś ṣ s h
+ 梵语（संस्कृता वाक् saṃskṛtā vāk, 簡稱 संस्कृतम् saṃskṛtam）是印欧语系的印度-伊朗語族的印度-雅利安语支的一种语言[3]，是印歐語系最古老的語言之一。和拉丁語一樣，梵語已經成為一種屬於學術和宗教的專門用語。
+ 
+印度教經典《吠陀經》即用梵文寫成。其語法和發音均視作一種宗教儀規而得以絲毫不差地保存下來。19世紀時梵語成為重構印歐諸語言的關鍵語種。有人认为它是梵天的语言
+
+Sanskrit, sözcük olarak cilalanmış, düzenlenmiş, kusursuzlaştırılmış manalarını taşımaktadır.
+ 
+Tarihçesi [değiştir]
+ 
+Tarihçiler Sanskrit'i ilk konuşanların Hindistan, Hazar Denizi ve Ortadoğu'ya kadar yayılan çok geniş bir topluluk olduğunu öne sürer; bazıları da bu lisanın hiçbir zaman dini ve ilmi çevre sınırlarını aşıp, halk tarafından kullanılmadığını iddia etmektedirler.
+ 
+Sanskrit'i konuşanların ilk vatanları Pencap (Yukarı İndus Vadisi)tır. Burada Sanskrit'in en eski şekli olan Veda lisanı ortaya çıkmıştır. M.Ö. 2. bin yılın ilk yarısına tekabül eden dönemde, Veda dili gelişmiş, esneklik kazanmıştır. M.Ö. 1. bin yılda, Ganj Vadisine kadar yayılan Hint- Ari topluluğu bu lisanı iyice benimsemiş ve daha sonra da Prakrit denilen dil ortaya çıkmıştır. Bu arada komşu kültürlerden birçok sözcük ve kullanılış şekli de Sanskrit'e karışmıştır.
+Varhaisin sanskritin kielioppi on Pāṇinin 400-luvun tienoilla eaa. kirjoittama Aṣṭādhyāyī, joka kuvaa sanskritin rakenteen matemaattisen täsmällisesti 3 959 säännön avulla. Pāṇinin kielioppia pidetään edelleen korkeimpana auktoriteettina kielen suhteen, ja myöhemmät kieliopit ovat lähes yksinomaan sen kommentaareja. Kielioppi sisältää oivalluksia, jotka länsimainen kielitiede teki vasta 1900-luvulla, ja esimerkiksi sen säännöt vastaavat täsmällisyydeltään tietokoneiden ohjelmointikielten kuvaukseen käytettyä Backus-Naur-muotoa (BNF).
+Pagkakahambing
+ 
+
+
+Pamilya
+ 
+
+
+ina
+ 
+ama
+ 
+babaeng anak
+ 
+lalakeng anak
+ 
+lalakeng kapatid
+ 
+babaeng kapatid
+ 
+
+
+
+
+mātṛ
+ 
+pitṛ
+ 
+duhitṛ
+ 
+sūnu
+ 
+bhrātṛ
+ 
+svāsṛ
+ 
+śvaśura
+ 
+vidvā
+ 
+
+
+mater
+ 
+pater
+ 
+filia (daughter/θυγάτηρ)
+ 
+filius (son)
+ 
+frater
+ 
+soror
+ 
+socer
+ 
+vidua
+ Sanskrt ili sanskrit (saṃskṛtam संस्कृतम्) je klasični jezik Indije, odnosno liturgijski jezik u hinduizmu, budizmu i džainizmu.
+ 
+U Aziji ima status sličan latinskom i grčkom jeziku u Evropi.
+ 
+U Indiji predstavlja jedan od službenih jezika, iako su češće u upotrebi noviji jezici. Iako ga mnogi smatraju mrtvim jezikom, još uvijek se uči i koristi kao svakodnevni govor u nekim indijskim zajednicama.
+
+Санскрит әдәбияты шигърият, драма белән бер рәттән фәнни, техник, философик һәм һиндуизм дини текстларын эченә кертә. Санскрит һиндуизм дини ритуалларында мантра һәм гимн формасында церемониаль тел буларак киң кулланыла. Сөйләм санскрит Һиндстанның кайбер традицион учреждениеләрендә кулланыла һәм бу телне торгызырга көч куела.
+
+ (ואינם מוזחים משָם בנטייה). למשל:
+      ברית אאע"ה (=ברית אברהם אבינו עליו השלום); עכו"ם (=עובד כוכבים ומזלות; 
+      ולא עכ"ום); ש"ץ (=שליח ציבור; וראו הערה ג להלן); הרמב"ם (=הרב משה בן מימון). 
+      ובנטייה: ח"כים, תנ"כיכם, רמטכ"לים, רס"ריות
+
+	  Tiếng Phạn (zh. Phạm/Phạn ngữ 梵語; sa. saṃskṛtā vāk संस्कृता वाक्, hoặc ngắn hơn là saṃskṛtam संस्कृतम्) là một cổ ngữ của Ấn Độ còn gọi là bắc Phạn để phân biệt với tiếng Pali là nam Phạn và là một ngôn ngữ tế lễ của các tôn giáo như Ấn Độ giáo, Phật giáo Bắc Tông và Jaina giáo. Nó có một vị trí quan trọng trong văn hóa Ấn Độ và các văn hóa vùng Đông Nam Á tương tự như vị trí của tiếng Latinh và tiếng Hy Lạp trong châu Âu Trung Cổ; nó cũng là kết cấu trọng điểm của truyền thống Ấn giáo/Phệ-đà, nhưng ở một mức độ cao cấp hơn. Ngày nay nó là một trong nhiều ngôn ngữ chính thức của Ấn Độ, mặc dù tiếng Hindi (hindī हिन्दी) và các thứ tiếng địa phương khác ngày càng được dùng phổ biến.
+ 
+Khác với quan niệm phổ biến, tiếng Phạn không phải là một ngôn ngữ chết. Nó vẫn còn được dạy trong các trường học và tại gia khắp nước Ấn, tuy chỉ là ngôn ngữ thứ hai. Một số người Bà-la-môn vẫn xem tiếng Phạn là tiếng mẹ đẻ. Theo một thông tin gần đây, tiếng Phạn được phục hưng như một tiếng địa phương thực dụng tại làng Mattur gần Shimoga, Karnataka
+
+
+سے سرکاری سطح پر کافی کوششیں کی جاری رہی ہیں۔ کالی داس اور سور داس سنسکرت کے بڑے شاعر اور عالم گزرے ہیں۔
+ 
+کہا جاتا ہے کہ یہ زبان صرف اپنی سختیون کی وجہ سے اپنا وجود کھو دی۔
+ 
+ہندیوروپی٫ سو کے قریب زبانوں کا ایک خاندان ہے انھیں ایک خاندان میں ان کی خصوصیات کی بنا پر رکھا گیا ہے۔ انڈو یورپین زبانوں کے خاندان کے بولنے والوں کی تعداد دنیا میں کسی بھی اور زبانوں کے خاندان کے بولنے والوں سے زیادہ ہے۔ جغرافیائی لحاظ سے بھی زبانوں کا یہ خاندان دنیا کے ایکوسیع رقبہ پر پھیلا ہوا ہے۔
+ 
+اس خاندان کی اہم زبانیں [اردو]، بنگالی، ہندی، پنجابی، پشتو، فارسی، کرد، روسی، جرمن، فرانسیسی، دانش، ولندیزی اور انگریزی ہیں۔
+ 
+سنسکرت اسی کی اک شاخ ہے
+ 
+
+
+
+[ترمیم] رسم الخط
+ 
+[ترمیم] بیرونی روابط
+ Sanskrit
+ Sanskrit Tutor
+ Online Sanskrit Dictionary
+ American Sanskrit Institute
+ 
+
+
+
+
+
+زمرہ جات: زبانیں | ہندو مت | آریائی زبانیں | سنسکرت
+
+//Contains all kinds of characters:
+
+(汉字 / 漢字; Hànzì), 
+简化字
+宋體/明體; pinyin: Sòngtǐ/Míngtǐ
+katakana (カタカナ or 片仮名). 
+am Freitagabend nach einem harten Arbeitstag und dem üblichen Ärger, der ihn schon seit Jahren immer wieder an seinem Arbeitsplatz plagt, mit fraglicher Freude auf ein Mahl, das seine 
+Yes.  نعم na`am / No.  لا. laa Maybe.  ممكن mumkin. Excuse me.  إسمحلي ismaHli the 'i' at the beginning is swallowed Good morning.  صباح الخير sabaH al-khair Good evening.  مساء الخير masa' al-khair good  جيد jayyid. very good  جيد جدا jayyid jiddan. Never mind.  ليس مهم mish Muhim. None, nothing, nobody.  ما في Maa fii. Hello. (informal)  سلام salaam. Fine, thank you.  بخير ,شكرا bi-khair Shukran What is your name?  ما اسمك sho ismak? Ma Ismuka/sho Ismak? to a male Ma Ismuki/sho Ismik? to a female My name is ______ . اسمي ana Ismi _______ Nice to meet you.  تشرفنا tasharafna lit. "You honor us" You're welcome.  عفوا `afwan Excuse me. (getting attention) لو سمحت lau samaHt Excuse me. (begging pardon)  انا اسفه / انا اسف Ana Aasif (male) Ana Aasifah (female) I'm sorry.  انا اسفه / انا اسف Ana Aasif male Ana Aasifah female 
+
+The following is a sample text in High Hindi, of the Article 1 of the Universal Declaration of Human Rights (by the United Nations):
+ अनुच्छेद 1 — सभी मनुष्यों को गौरव और अधिकारों के मामले में जन्मजात स्वतन्त्रता और समानता प्राप्त है। उन्हें बुद्धि और अन्तरात्मा की देन प्राप्त है और परस्पर उन्हें भाईचारे के भाव से बर्ताव करना चाहिये।
+
+ Further information: Śikṣā
+ 
+Classical Sanskrit distinguishes about 36 phonemes. There is, however, some allophony and the writing systems used for Sanskrit generally indicate this, thus distinguishing 48 sounds.
+ 
+The sounds are traditionally listed in the order vowels (Ach), diphthongs (Hal), anusvara and visarga, plosives (Sparśa) and nasals (starting in the back of the mouth and moving forward), and finally the liquids and fricatives, written in IAST as follows (see the tables below for details):
+ a ā i ī u ū ṛ ṝ ḷ ḹ ; e ai o au ṃ ḥ k kh g gh ṅ; c ch j jh ñ; ṭ ṭh ḍ ḍh ṇ; t th d dh n; p ph b bh m y r l v; ś ṣ s h
+ 梵语（संस्कृता वाक् saṃskṛtā vāk, 簡稱 संस्कृतम् saṃskṛtam）是印欧语系的印度-伊朗語族的印度-雅利安语支的一种语言[3]，是印歐語系最古老的語言之一。和拉丁語一樣，梵語已經成為一種屬於學術和宗教的專門用語。
+ 
+印度教經典《吠陀經》即用梵文寫成。其語法和發音均視作一種宗教儀規而得以絲毫不差地保存下來。19世紀時梵語成為重構印歐諸語言的關鍵語種。有人认为它是梵天的语言
+
+Sanskrit, sözcük olarak cilalanmış, düzenlenmiş, kusursuzlaştırılmış manalarını taşımaktadır.
+ 
+Tarihçesi [değiştir]
+ 
+Tarihçiler Sanskrit'i ilk konuşanların Hindistan, Hazar Denizi ve Ortadoğu'ya kadar yayılan çok geniş bir topluluk olduğunu öne sürer; bazıları da bu lisanın hiçbir zaman dini ve ilmi çevre sınırlarını aşıp, halk tarafından kullanılmadığını iddia etmektedirler.
+ 
+Sanskrit'i konuşanların ilk vatanları Pencap (Yukarı İndus Vadisi)tır. Burada Sanskrit'in en eski şekli olan Veda lisanı ortaya çıkmıştır. M.Ö. 2. bin yılın ilk yarısına tekabül eden dönemde, Veda dili gelişmiş, esneklik kazanmıştır. M.Ö. 1. bin yılda, Ganj Vadisine kadar yayılan Hint- Ari topluluğu bu lisanı iyice benimsemiş ve daha sonra da Prakrit denilen dil ortaya çıkmıştır. Bu arada komşu kültürlerden birçok sözcük ve kullanılış şekli de Sanskrit'e karışmıştır.
+Varhaisin sanskritin kielioppi on Pāṇinin 400-luvun tienoilla eaa. kirjoittama Aṣṭādhyāyī, joka kuvaa sanskritin rakenteen matemaattisen täsmällisesti 3 959 säännön avulla. Pāṇinin kielioppia pidetään edelleen korkeimpana auktoriteettina kielen suhteen, ja myöhemmät kieliopit ovat lähes yksinomaan sen kommentaareja. Kielioppi sisältää oivalluksia, jotka länsimainen kielitiede teki vasta 1900-luvulla, ja esimerkiksi sen säännöt vastaavat täsmällisyydeltään tietokoneiden ohjelmointikielten kuvaukseen käytettyä Backus-Naur-muotoa (BNF).
+Pagkakahambing
+ 
+
+
+Pamilya
+ 
+
+
+ina
+ 
+ama
+ 
+babaeng anak
+ 
+lalakeng anak
+ 
+lalakeng kapatid
+ 
+babaeng kapatid
+ 
+
+
+
+
+mātṛ
+ 
+pitṛ
+ 
+duhitṛ
+ 
+sūnu
+ 
+bhrātṛ
+ 
+svāsṛ
+ 
+śvaśura
+ 
+vidvā
+ 
+
+
+mater
+ 
+pater
+ 
+filia (daughter/θυγάτηρ)
+ 
+filius (son)
+ 
+frater
+ 
+soror
+ 
+socer
+ 
+vidua
+ Sanskrt ili sanskrit (saṃskṛtam संस्कृतम्) je klasični jezik Indije, odnosno liturgijski jezik u hinduizmu, budizmu i džainizmu.
+ 
+U Aziji ima status sličan latinskom i grčkom jeziku u Evropi.
+ 
+U Indiji predstavlja jedan od službenih jezika, iako su češće u upotrebi noviji jezici. Iako ga mnogi smatraju mrtvim jezikom, još uvijek se uči i koristi kao svakodnevni govor u nekim indijskim zajednicama.
+
+Санскрит әдәбияты шигърият, драма белән бер рәттән фәнни, техник, философик һәм һиндуизм дини текстларын эченә кертә. Санскрит һиндуизм дини ритуалларында мантра һәм гимн формасында церемониаль тел буларак киң кулланыла. Сөйләм санскрит Һиндстанның кайбер традицион учреждениеләрендә кулланыла һәм бу телне торгызырга көч куела.
+
+ (ואינם מוזחים משָם בנטייה). למשל:
+      ברית אאע"ה (=ברית אברהם אבינו עליו השלום); עכו"ם (=עובד כוכבים ומזלות; 
+      ולא עכ"ום); ש"ץ (=שליח ציבור; וראו הערה ג להלן); הרמב"ם (=הרב משה בן מימון). 
+      ובנטייה: ח"כים, תנ"כיכם, רמטכ"לים, רס"ריות
+
+	  Tiếng Phạn (zh. Phạm/Phạn ngữ 梵語; sa. saṃskṛtā vāk संस्कृता वाक्, hoặc ngắn hơn là saṃskṛtam संस्कृतम्) là một cổ ngữ của Ấn Độ còn gọi là bắc Phạn để phân biệt với tiếng Pali là nam Phạn và là một ngôn ngữ tế lễ của các tôn giáo như Ấn Độ giáo, Phật giáo Bắc Tông và Jaina giáo. Nó có một vị trí quan trọng trong văn hóa Ấn Độ và các văn hóa vùng Đông Nam Á tương tự như vị trí của tiếng Latinh và tiếng Hy Lạp trong châu Âu Trung Cổ; nó cũng là kết cấu trọng điểm của truyền thống Ấn giáo/Phệ-đà, nhưng ở một mức độ cao cấp hơn. Ngày nay nó là một trong nhiều ngôn ngữ chính thức của Ấn Độ, mặc dù tiếng Hindi (hindī हिन्दी) và các thứ tiếng địa phương khác ngày càng được dùng phổ biến.
+ 
+Khác với quan niệm phổ biến, tiếng Phạn không phải là một ngôn ngữ chết. Nó vẫn còn được dạy trong các trường học và tại gia khắp nước Ấn, tuy chỉ là ngôn ngữ thứ hai. Một số người Bà-la-môn vẫn xem tiếng Phạn là tiếng mẹ đẻ. Theo một thông tin gần đây, tiếng Phạn được phục hưng như một tiếng địa phương thực dụng tại làng Mattur gần Shimoga, Karnataka
+
+
+سے سرکاری سطح پر کافی کوششیں کی جاری رہی ہیں۔ کالی داس اور سور داس سنسکرت کے بڑے شاعر اور عالم گزرے ہیں۔
+ 
+کہا جاتا ہے کہ یہ زبان صرف اپنی سختیون کی وجہ سے اپنا وجود کھو دی۔
+ 
+ہندیوروپی٫ سو کے قریب زبانوں کا ایک خاندان ہے انھیں ایک خاندان میں ان کی خصوصیات کی بنا پر رکھا گیا ہے۔ انڈو یورپین زبانوں کے خاندان کے بولنے والوں کی تعداد دنیا میں کسی بھی اور زبانوں کے خاندان کے بولنے والوں سے زیادہ ہے۔ جغرافیائی لحاظ سے بھی زبانوں کا یہ خاندان دنیا کے ایکوسیع رقبہ پر پھیلا ہوا ہے۔
+ 
+اس خاندان کی اہم زبانیں [اردو]، بنگالی، ہندی، پنجابی، پشتو، فارسی، کرد، روسی، جرمن، فرانسیسی، دانش، ولندیزی اور انگریزی ہیں۔
+ 
+سنسکرت اسی کی اک شاخ ہے
+ 
+
+
+
+[ترمیم] رسم الخط
+ 
+[ترمیم] بیرونی روابط
+ Sanskrit
+ Sanskrit Tutor
+ Online Sanskrit Dictionary
+ American Sanskrit Institute
+ 
+
+
+
+
+
+زمرہ جات: زبانیں | ہندو مت | آریائی زبانیں | سنسکرت
+
+//Contains all kinds of characters:
+
+(汉字 / 漢字; Hànzì), 
+简化字
+宋體/明體; pinyin: Sòngtǐ/Míngtǐ
+katakana (カタカナ or 片仮名). 
+am Freitagabend nach einem harten Arbeitstag und dem üblichen Ärger, der ihn schon seit Jahren immer wieder an seinem Arbeitsplatz plagt, mit fraglicher Freude auf ein Mahl, das seine 
+Yes.  نعم na`am / No.  لا. laa Maybe.  ممكن mumkin. Excuse me.  إسمحلي ismaHli the 'i' at the beginning is swallowed Good morning.  صباح الخير sabaH al-khair Good evening.  مساء الخير masa' al-khair good  جيد jayyid. very good  جيد جدا jayyid jiddan. Never mind.  ليس مهم mish Muhim. None, nothing, nobody.  ما في Maa fii. Hello. (informal)  سلام salaam. Fine, thank you.  بخير ,شكرا bi-khair Shukran What is your name?  ما اسمك sho ismak? Ma Ismuka/sho Ismak? to a male Ma Ismuki/sho Ismik? to a female My name is ______ . اسمي ana Ismi _______ Nice to meet you.  تشرفنا tasharafna lit. "You honor us" You're welcome.  عفوا `afwan Excuse me. (getting attention) لو سمحت lau samaHt Excuse me. (begging pardon)  انا اسفه / انا اسف Ana Aasif (male) Ana Aasifah (female) I'm sorry.  انا اسفه / انا اسف Ana Aasif male Ana Aasifah female 
+
+The following is a sample text in High Hindi, of the Article 1 of the Universal Declaration of Human Rights (by the United Nations):
+ अनुच्छेद 1 — सभी मनुष्यों को गौरव और अधिकारों के मामले में जन्मजात स्वतन्त्रता और समानता प्राप्त है। उन्हें बुद्धि और अन्तरात्मा की देन प्राप्त है और परस्पर उन्हें भाईचारे के भाव से बर्ताव करना चाहिये।
+
+ Further information: Śikṣā
+ 
+Classical Sanskrit distinguishes about 36 phonemes. There is, however, some allophony and the writing systems used for Sanskrit generally indicate this, thus distinguishing 48 sounds.
+ 
+The sounds are traditionally listed in the order vowels (Ach), diphthongs (Hal), anusvara and visarga, plosives (Sparśa) and nasals (starting in the back of the mouth and moving forward), and finally the liquids and fricatives, written in IAST as follows (see the tables below for details):
+ a ā i ī u ū ṛ ṝ ḷ ḹ ; e ai o au ṃ ḥ k kh g gh ṅ; c ch j jh ñ; ṭ ṭh ḍ ḍh ṇ; t th d dh n; p ph b bh m y r l v; ś ṣ s h
+ 梵语（संस्कृता वाक् saṃskṛtā vāk, 簡稱 संस्कृतम् saṃskṛtam）是印欧语系的印度-伊朗語族的印度-雅利安语支的一种语言[3]，是印歐語系最古老的語言之一。和拉丁語一樣，梵語已經成為一種屬於學術和宗教的專門用語。
+ 
+印度教經典《吠陀經》即用梵文寫成。其語法和發音均視作一種宗教儀規而得以絲毫不差地保存下來。19世紀時梵語成為重構印歐諸語言的關鍵語種。有人认为它是梵天的语言
+
+Sanskrit, sözcük olarak cilalanmış, düzenlenmiş, kusursuzlaştırılmış manalarını taşımaktadır.
+ 
+Tarihçesi [değiştir]
+ 
+Tarihçiler Sanskrit'i ilk konuşanların Hindistan, Hazar Denizi ve Ortadoğu'ya kadar yayılan çok geniş bir topluluk olduğunu öne sürer; bazıları da bu lisanın hiçbir zaman dini ve ilmi çevre sınırlarını aşıp, halk tarafından kullanılmadığını iddia etmektedirler.
+ 
+Sanskrit'i konuşanların ilk vatanları Pencap (Yukarı İndus Vadisi)tır. Burada Sanskrit'in en eski şekli olan Veda lisanı ortaya çıkmıştır. M.Ö. 2. bin yılın ilk yarısına tekabül eden dönemde, Veda dili gelişmiş, esneklik kazanmıştır. M.Ö. 1. bin yılda, Ganj Vadisine kadar yayılan Hint- Ari topluluğu bu lisanı iyice benimsemiş ve daha sonra da Prakrit denilen dil ortaya çıkmıştır. Bu arada komşu kültürlerden birçok sözcük ve kullanılış şekli de Sanskrit'e karışmıştır.
+Varhaisin sanskritin kielioppi on Pāṇinin 400-luvun tienoilla eaa. kirjoittama Aṣṭādhyāyī, joka kuvaa sanskritin rakenteen matemaattisen täsmällisesti 3 959 säännön avulla. Pāṇinin kielioppia pidetään edelleen korkeimpana auktoriteettina kielen suhteen, ja myöhemmät kieliopit ovat lähes yksinomaan sen kommentaareja. Kielioppi sisältää oivalluksia, jotka länsimainen kielitiede teki vasta 1900-luvulla, ja esimerkiksi sen säännöt vastaavat täsmällisyydeltään tietokoneiden ohjelmointikielten kuvaukseen käytettyä Backus-Naur-muotoa (BNF).
+Pagkakahambing
+ 
+
+
+Pamilya
+ 
+
+
+ina
+ 
+ama
+ 
+babaeng anak
+ 
+lalakeng anak
+ 
+lalakeng kapatid
+ 
+babaeng kapatid
+ 
+
+
+
+
+mātṛ
+ 
+pitṛ
+ 
+duhitṛ
+ 
+sūnu
+ 
+bhrātṛ
+ 
+svāsṛ
+ 
+śvaśura
+ 
+vidvā
+ 
+
+
+mater
+ 
+pater
+ 
+filia (daughter/θυγάτηρ)
+ 
+filius (son)
+ 
+frater
+ 
+soror
+ 
+socer
+ 
+vidua
+ Sanskrt ili sanskrit (saṃskṛtam संस्कृतम्) je klasični jezik Indije, odnosno liturgijski jezik u hinduizmu, budizmu i džainizmu.
+ 
+U Aziji ima status sličan latinskom i grčkom jeziku u Evropi.
+ 
+U Indiji predstavlja jedan od službenih jezika, iako su češće u upotrebi noviji jezici. Iako ga mnogi smatraju mrtvim jezikom, još uvijek se uči i koristi kao svakodnevni govor u nekim indijskim zajednicama.
+
+Санскрит әдәбияты шигърият, драма белән бер рәттән фәнни, техник, философик һәм һиндуизм дини текстларын эченә кертә. Санскрит һиндуизм дини ритуалларында мантра һәм гимн формасында церемониаль тел буларак киң кулланыла. Сөйләм санскрит Һиндстанның кайбер традицион учреждениеләрендә кулланыла һәм бу телне торгызырга көч куела.
+
+ (ואינם מוזחים משָם בנטייה). למשל:
+      ברית אאע"ה (=ברית אברהם אבינו עליו השלום); עכו"ם (=עובד כוכבים ומזלות; 
+      ולא עכ"ום); ש"ץ (=שליח ציבור; וראו הערה ג להלן); הרמב"ם (=הרב משה בן מימון). 
+      ובנטייה: ח"כים, תנ"כיכם, רמטכ"לים, רס"ריות
+
+	  Tiếng Phạn (zh. Phạm/Phạn ngữ 梵語; sa. saṃskṛtā vāk संस्कृता वाक्, hoặc ngắn hơn là saṃskṛtam संस्कृतम्) là một cổ ngữ của Ấn Độ còn gọi là bắc Phạn để phân biệt với tiếng Pali là nam Phạn và là một ngôn ngữ tế lễ của các tôn giáo như Ấn Độ giáo, Phật giáo Bắc Tông và Jaina giáo. Nó có một vị trí quan trọng trong văn hóa Ấn Độ và các văn hóa vùng Đông Nam Á tương tự như vị trí của tiếng Latinh và tiếng Hy Lạp trong châu Âu Trung Cổ; nó cũng là kết cấu trọng điểm của truyền thống Ấn giáo/Phệ-đà, nhưng ở một mức độ cao cấp hơn. Ngày nay nó là một trong nhiều ngôn ngữ chính thức của Ấn Độ, mặc dù tiếng Hindi (hindī हिन्दी) và các thứ tiếng địa phương khác ngày càng được dùng phổ biến.
+ 
+Khác với quan niệm phổ biến, tiếng Phạn không phải là một ngôn ngữ chết. Nó vẫn còn được dạy trong các trường học và tại gia khắp nước Ấn, tuy chỉ là ngôn ngữ thứ hai. Một số người Bà-la-môn vẫn xem tiếng Phạn là tiếng mẹ đẻ. Theo một thông tin gần đây, tiếng Phạn được phục hưng như một tiếng địa phương thực dụng tại làng Mattur gần Shimoga, Karnataka
+
+
+سے سرکاری سطح پر کافی کوششیں کی جاری رہی ہیں۔ کالی داس اور سور داس سنسکرت کے بڑے شاعر اور عالم گزرے ہیں۔
+ 
+کہا جاتا ہے کہ یہ زبان صرف اپنی سختیون کی وجہ سے اپنا وجود کھو دی۔
+ 
+ہندیوروپی٫ سو کے قریب زبانوں کا ایک خاندان ہے انھیں ایک خاندان میں ان کی خصوصیات کی بنا پر رکھا گیا ہے۔ انڈو یورپین زبانوں کے خاندان کے بولنے والوں کی تعداد دنیا میں کسی بھی اور زبانوں کے خاندان کے بولنے والوں سے زیادہ ہے۔ جغرافیائی لحاظ سے بھی زبانوں کا یہ خاندان دنیا کے ایکوسیع رقبہ پر پھیلا ہوا ہے۔
+ 
+اس خاندان کی اہم زبانیں [اردو]، بنگالی، ہندی، پنجابی، پشتو، فارسی، کرد، روسی، جرمن، فرانسیسی، دانش، ولندیزی اور انگریزی ہیں۔
+ 
+سنسکرت اسی کی اک شاخ ہے
+ 
+
+
+
+[ترمیم] رسم الخط
+ 
+[ترمیم] بیرونی روابط
+ Sanskrit
+ Sanskrit Tutor
+ Online Sanskrit Dictionary
+ American Sanskrit Institute
+ 
+
+
+
+
+
+زمرہ جات: زبانیں | ہندو مت | آریائی زبانیں | سنسکرت
+
+//Contains all kinds of characters:
+
+(汉字 / 漢字; Hànzì), 
+简化字
+宋體/明體; pinyin: Sòngtǐ/Míngtǐ
+katakana (カタカナ or 片仮名). 
+am Freitagabend nach einem harten Arbeitstag und dem üblichen Ärger, der ihn schon seit Jahren immer wieder an seinem Arbeitsplatz plagt, mit fraglicher Freude auf ein Mahl, das seine 
+Yes.  نعم na`am / No.  لا. laa Maybe.  ممكن mumkin. Excuse me.  إسمحلي ismaHli the 'i' at the beginning is swallowed Good morning.  صباح الخير sabaH al-khair Good evening.  مساء الخير masa' al-khair good  جيد jayyid. very good  جيد جدا jayyid jiddan. Never mind.  ليس مهم mish Muhim. None, nothing, nobody.  ما في Maa fii. Hello. (informal)  سلام salaam. Fine, thank you.  بخير ,شكرا bi-khair Shukran What is your name?  ما اسمك sho ismak? Ma Ismuka/sho Ismak? to a male Ma Ismuki/sho Ismik? to a female My name is ______ . اسمي ana Ismi _______ Nice to meet you.  تشرفنا tasharafna lit. "You honor us" You're welcome.  عفوا `afwan Excuse me. (getting attention) لو سمحت lau samaHt Excuse me. (begging pardon)  انا اسفه / انا اسف Ana Aasif (male) Ana Aasifah (female) I'm sorry.  انا اسفه / انا اسف Ana Aasif male Ana Aasifah female 
+
+The following is a sample text in High Hindi, of the Article 1 of the Universal Declaration of Human Rights (by the United Nations):
+ अनुच्छेद 1 — सभी मनुष्यों को गौरव और अधिकारों के मामले में जन्मजात स्वतन्त्रता और समानता प्राप्त है। उन्हें बुद्धि और अन्तरात्मा की देन प्राप्त है और परस्पर उन्हें भाईचारे के भाव से बर्ताव करना चाहिये।
+
+ Further information: Śikṣā
+ 
+Classical Sanskrit distinguishes about 36 phonemes. There is, however, some allophony and the writing systems used for Sanskrit generally indicate this, thus distinguishing 48 sounds.
+ 
+The sounds are traditionally listed in the order vowels (Ach), diphthongs (Hal), anusvara and visarga, plosives (Sparśa) and nasals (starting in the back of the mouth and moving forward), and finally the liquids and fricatives, written in IAST as follows (see the tables below for details):
+ a ā i ī u ū ṛ ṝ ḷ ḹ ; e ai o au ṃ ḥ k kh g gh ṅ; c ch j jh ñ; ṭ ṭh ḍ ḍh ṇ; t th d dh n; p ph b bh m y r l v; ś ṣ s h
+ 梵语（संस्कृता वाक् saṃskṛtā vāk, 簡稱 संस्कृतम् saṃskṛtam）是印欧语系的印度-伊朗語族的印度-雅利安语支的一种语言[3]，是印歐語系最古老的語言之一。和拉丁語一樣，梵語已經成為一種屬於學術和宗教的專門用語。
+ 
+印度教經典《吠陀經》即用梵文寫成。其語法和發音均視作一種宗教儀規而得以絲毫不差地保存下來。19世紀時梵語成為重構印歐諸語言的關鍵語種。有人认为它是梵天的语言
+
+Sanskrit, sözcük olarak cilalanmış, düzenlenmiş, kusursuzlaştırılmış manalarını taşımaktadır.
+ 
+Tarihçesi [değiştir]
+ 
+Tarihçiler Sanskrit'i ilk konuşanların Hindistan, Hazar Denizi ve Ortadoğu'ya kadar yayılan çok geniş bir topluluk olduğunu öne sürer; bazıları da bu lisanın hiçbir zaman dini ve ilmi çevre sınırlarını aşıp, halk tarafından kullanılmadığını iddia etmektedirler.
+ 
+Sanskrit'i konuşanların ilk vatanları Pencap (Yukarı İndus Vadisi)tır. Burada Sanskrit'in en eski şekli olan Veda lisanı ortaya çıkmıştır. M.Ö. 2. bin yılın ilk yarısına tekabül eden dönemde, Veda dili gelişmiş, esneklik kazanmıştır. M.Ö. 1. bin yılda, Ganj Vadisine kadar yayılan Hint- Ari topluluğu bu lisanı iyice benimsemiş ve daha sonra da Prakrit denilen dil ortaya çıkmıştır. Bu arada komşu kültürlerden birçok sözcük ve kullanılış şekli de Sanskrit'e karışmıştır.
+Varhaisin sanskritin kielioppi on Pāṇinin 400-luvun tienoilla eaa. kirjoittama Aṣṭādhyāyī, joka kuvaa sanskritin rakenteen matemaattisen täsmällisesti 3 959 säännön avulla. Pāṇinin kielioppia pidetään edelleen korkeimpana auktoriteettina kielen suhteen, ja myöhemmät kieliopit ovat lähes yksinomaan sen kommentaareja. Kielioppi sisältää oivalluksia, jotka länsimainen kielitiede teki vasta 1900-luvulla, ja esimerkiksi sen säännöt vastaavat täsmällisyydeltään tietokoneiden ohjelmointikielten kuvaukseen käytettyä Backus-Naur-muotoa (BNF).
+Pagkakahambing
+ 
+
+
+Pamilya
+ 
+
+
+ina
+ 
+ama
+ 
+babaeng anak
+ 
+lalakeng anak
+ 
+lalakeng kapatid
+ 
+babaeng kapatid
+ 
+
+
+
+
+mātṛ
+ 
+pitṛ
+ 
+duhitṛ
+ 
+sūnu
+ 
+bhrātṛ
+ 
+svāsṛ
+ 
+śvaśura
+ 
+vidvā
+ 
+
+
+mater
+ 
+pater
+ 
+filia (daughter/θυγάτηρ)
+ 
+filius (son)
+ 
+frater
+ 
+soror
+ 
+socer
+ 
+vidua
+ Sanskrt ili sanskrit (saṃskṛtam संस्कृतम्) je klasični jezik Indije, odnosno liturgijski jezik u hinduizmu, budizmu i džainizmu.
+ 
+U Aziji ima status sličan latinskom i grčkom jeziku u Evropi.
+ 
+U Indiji predstavlja jedan od službenih jezika, iako su češće u upotrebi noviji jezici. Iako ga mnogi smatraju mrtvim jezikom, još uvijek se uči i koristi kao svakodnevni govor u nekim indijskim zajednicama.
+
+Санскрит әдәбияты шигърият, драма белән бер рәттән фәнни, техник, философик һәм һиндуизм дини текстларын эченә кертә. Санскрит һиндуизм дини ритуалларында мантра һәм гимн формасында церемониаль тел буларак киң кулланыла. Сөйләм санскрит Һиндстанның кайбер традицион учреждениеләрендә кулланыла һәм бу телне торгызырга көч куела.
+
+ (ואינם מוזחים משָם בנטייה). למשל:
+      ברית אאע"ה (=ברית אברהם אבינו עליו השלום); עכו"ם (=עובד כוכבים ומזלות; 
+      ולא עכ"ום); ש"ץ (=שליח ציבור; וראו הערה ג להלן); הרמב"ם (=הרב משה בן מימון). 
+      ובנטייה: ח"כים, תנ"כיכם, רמטכ"לים, רס"ריות
+
+	  Tiếng Phạn (zh. Phạm/Phạn ngữ 梵語; sa. saṃskṛtā vāk संस्कृता वाक्, hoặc ngắn hơn là saṃskṛtam संस्कृतम्) là một cổ ngữ của Ấn Độ còn gọi là bắc Phạn để phân biệt với tiếng Pali là nam Phạn và là một ngôn ngữ tế lễ của các tôn giáo như Ấn Độ giáo, Phật giáo Bắc Tông và Jaina giáo. Nó có một vị trí quan trọng trong văn hóa Ấn Độ và các văn hóa vùng Đông Nam Á tương tự như vị trí của tiếng Latinh và tiếng Hy Lạp trong châu Âu Trung Cổ; nó cũng là kết cấu trọng điểm của truyền thống Ấn giáo/Phệ-đà, nhưng ở một mức độ cao cấp hơn. Ngày nay nó là một trong nhiều ngôn ngữ chính thức của Ấn Độ, mặc dù tiếng Hindi (hindī हिन्दी) và các thứ tiếng địa phương khác ngày càng được dùng phổ biến.
+ 
+Khác với quan niệm phổ biến, tiếng Phạn không phải là một ngôn ngữ chết. Nó vẫn còn được dạy trong các trường học và tại gia khắp nước Ấn, tuy chỉ là ngôn ngữ thứ hai. Một số người Bà-la-môn vẫn xem tiếng Phạn là tiếng mẹ đẻ. Theo một thông tin gần đây, tiếng Phạn được phục hưng như một tiếng địa phương thực dụng tại làng Mattur gần Shimoga, Karnataka
+
+
+سے سرکاری سطح پر کافی کوششیں کی جاری رہی ہیں۔ کالی داس اور سور داس سنسکرت کے بڑے شاعر اور عالم گزرے ہیں۔
+ 
+کہا جاتا ہے کہ یہ زبان صرف اپنی سختیون کی وجہ سے اپنا وجود کھو دی۔
+ 
+ہندیوروپی٫ سو کے قریب زبانوں کا ایک خاندان ہے انھیں ایک خاندان میں ان کی خصوصیات کی بنا پر رکھا گیا ہے۔ انڈو یورپین زبانوں کے خاندان کے بولنے والوں کی تعداد دنیا میں کسی بھی اور زبانوں کے خاندان کے بولنے والوں سے زیادہ ہے۔ جغرافیائی لحاظ سے بھی زبانوں کا یہ خاندان دنیا کے ایکوسیع رقبہ پر پھیلا ہوا ہے۔
+ 
+اس خاندان کی اہم زبانیں [اردو]، بنگالی، ہندی، پنجابی، پشتو، فارسی، کرد، روسی، جرمن، فرانسیسی، دانش، ولندیزی اور انگریزی ہیں۔
+ 
+سنسکرت اسی کی اک شاخ ہے
+ 
+
+
+
+[ترمیم] رسم الخط
+ 
+[ترمیم] بیرونی روابط
+ Sanskrit
+ Sanskrit Tutor
+ Online Sanskrit Dictionary
+ American Sanskrit Institute
+ 
+
+
+
+
+
+زمرہ جات: زبانیں | ہندو مت | آریU Aziji ima status sličan latinskom i grčkom jeziku u Evropi.
+ 
+U Indiji predstavlja jedan od službenih jezika, iako su češće u upotrebi noviji jezici. Iako ga mnogi smatraju mrtvim jezikom, još uvijek se uči i koristi kao svakodnevni govor u nekim indijskim zajednicama.
+
+Санскрит әдәбияты шигърият, драма белән бер рәттән фәнни, техник, философик һәм һиндуизм дини текстларын эченә кертә. Санскрит һиндуизм дини ритуалларында мантра һәм гимн формасында церемониаль тел буларак киң кулланыла. Сөйләм санскрит Һиндстанның кайбер традицион учреждениеләрендә кулланыла һәм бу телне торгызырга көч куела.
+
+ (ואינם מוזחים משָם בנטייה). למשל:
+      ברית אאע"ה (=ברית אברהם אבינו עליו השלום); עכו"ם (=עובד כוכבים ומזלות; 
+      ולא עכ"ום); ש"ץ (=שליח ציבור; וראו הערה ג להלן); הרמב"ם (=הרב משה בן מימון). 
+      ובנטייה: ח"כים, תנ"כיכם, רמטכ"לים, רס"ריות
+
+	  Tiếng Phạn (zh. Phạm/Phạn ngữ 梵語; sa. saṃskṛtā vāk संस्कृता वाक्, hoặc ngắn hơn là saṃskṛtam संस्कृतम्) là một cổ ngữ của Ấn Độ còn gọi là bắc Phạn để phân biệt với tiếng Pali là nam Phạn và là một ngôn ngữ tế lễ của các tôn giáo như Ấn Độ giáo, Phật giáo Bắc Tông và Jaina giáo. Nó có một vị trí quan trọng trong văn hóa Ấn Độ và các văn hóa vùng Đông Nam Á tương tự như vị trí của tiếng Latinh và tiếng Hy Lạp trong châu Âu Trung Cổ; nó cũng là kết cấu trọng điểm của truyền thống Ấn giáo/Phệ-đà, nhưng ở một mức độ cao cấp hơn. Ngày nay nó là một trong nhiều ngôn ngữ chính thức của Ấn Độ, mặc dù tiếng Hindi (hindī हिन्दी) và các thứ tiếng địa phương khác ngày càng được dùng phổ biến.
+ 
+Khác với quan niệm phổ biến, tiếng Phạn không phải là một ngôn ngữ chết. Nó vẫn còn được dạy trong
+
+ 
+
+سے سرکاری سطح پر کافی کوششیں کی جاری رہی ہیں۔ کالی داس اور سور داس سنسکرت کے بڑے شاعر اور عالم گزرے ہیں۔
+ 
+کہا جاتا ہے کہ یہ زبان صرف اپنی سختیون کی وجہ سے اپنا وجود کھو دی۔
+ 
+ہندیوروپی٫ سو کے قریب زبانوں کا ایک خاندان ہے انھیں ایک خاندان میں ان کی خصوصیات کی بنا پر رکھا گیا ہے۔ انڈو یورپین زبانوں کے خاندان کے بولنے والوں کی تعداد دنیا میں کسی بھی اور زبانوں کے خاندان کے بولنے والوں سے زیادہ ہے۔ جغرافیائی لحاظ سے بھی زبانوں کا یہ خاندان دنیا کے ایکوسیع رقبہ پر پھیلا ہوا ہے۔
+ 
+اس خاندان کی اہم زبانیں [اردو]، بنگالی، ہندی، پنجابی، پشتو، فارسی، کرد، روسی، جرمن، فرانسیسی، دای اور انگریزی ہیں۔
+ 
+ 
+
+
+
+[ترمیم] رسم الخط
+ 
+[ترمیم] بیرونی روابط
+ Sanskrit

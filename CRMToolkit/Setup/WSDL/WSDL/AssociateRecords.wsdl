@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="Associate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="objectType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="parentObjectType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="objectId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="parentId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="subType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="associationName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssociateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AssociateOneToMany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="childType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="childId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="parentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="parentId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="relationshipName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssociateOneToManyResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AssociateSoapIn">
+    <wsdl:part name="parameters" element="tns:Associate" />
+  </wsdl:message>
+  <wsdl:message name="AssociateSoapOut">
+    <wsdl:part name="parameters" element="tns:AssociateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssociateOneToManySoapIn">
+    <wsdl:part name="parameters" element="tns:AssociateOneToMany" />
+  </wsdl:message>
+  <wsdl:message name="AssociateOneToManySoapOut">
+    <wsdl:part name="parameters" element="tns:AssociateOneToManyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AssociateRecordsSoap">
+    <wsdl:operation name="Associate">
+      <wsdl:input message="tns:AssociateSoapIn" />
+      <wsdl:output message="tns:AssociateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociateOneToMany">
+      <wsdl:input message="tns:AssociateOneToManySoapIn" />
+      <wsdl:output message="tns:AssociateOneToManySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AssociateRecordsSoap" type="tns:AssociateRecordsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Associate">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/Associate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateOneToMany">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AssociateOneToMany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AssociateRecordsSoap12" type="tns:AssociateRecordsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Associate">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/Associate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateOneToMany">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AssociateOneToMany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AssociateRecords">
+    <wsdl:port name="AssociateRecordsSoap" binding="tns:AssociateRecordsSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/AssociateRecords.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AssociateRecordsSoap12" binding="tns:AssociateRecordsSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/AssociateRecords.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

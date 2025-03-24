@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:element name="Reset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gridXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Refresh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gridXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefreshResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RefreshResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ResetSoapIn">
+    <wsdl:part name="parameters" element="tns:Reset" />
+  </wsdl:message>
+  <wsdl:message name="ResetSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefreshSoapIn">
+    <wsdl:part name="parameters" element="tns:Refresh" />
+  </wsdl:message>
+  <wsdl:message name="RefreshSoapOut">
+    <wsdl:part name="parameters" element="tns:RefreshResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AppGridWebServiceSoap">
+    <wsdl:operation name="Reset">
+      <wsdl:input message="tns:ResetSoapIn" />
+      <wsdl:output message="tns:ResetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Refresh">
+      <wsdl:input message="tns:RefreshSoapIn" />
+      <wsdl:output message="tns:RefreshSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AppGridWebServiceSoap" type="tns:AppGridWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Reset">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/Reset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refresh">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/Refresh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AppGridWebServiceSoap12" type="tns:AppGridWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Reset">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/Reset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refresh">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/Refresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AppGridWebService">
+    <wsdl:port name="AppGridWebServiceSoap" binding="tns:AppGridWebServiceSoap">
+      <soap:address location="http://jemorl.crm.dynamics.com/appwebservices/AppGridWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AppGridWebServiceSoap12" binding="tns:AppGridWebServiceSoap12">
+      <soap12:address location="http://jemorl.crm.dynamics.com/appwebservices/AppGridWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

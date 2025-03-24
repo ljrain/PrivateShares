@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetAttributesToShow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="metricId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttributesToShowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttributesToShowResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrieveGoal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="columns" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveGoalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveGoalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFiscalPeriodDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fiscalYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="goalFiscalPeriod" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFiscalPeriodDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFiscalPeriodDatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveMetric">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="columns" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveMetricResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveMetricResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveMetricLineItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="metricId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="rollupQueryField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="columns" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveMetricLineItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveMetricLineItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecalculateGoal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="goalId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecalculateGoalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GoalHasActiveChildGoals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="goalId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GoalHasActiveChildGoalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GoalHasActiveChildGoalsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityFieldList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityTypeCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="metricType" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="goalType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityFieldListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityFieldListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAttributesToShowSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttributesToShow" />
+  </wsdl:message>
+  <wsdl:message name="GetAttributesToShowSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttributesToShowResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveGoalSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveGoal" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveGoalSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveGoalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFiscalPeriodDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFiscalPeriodDates" />
+  </wsdl:message>
+  <wsdl:message name="GetFiscalPeriodDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFiscalPeriodDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveMetricSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveMetric" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveMetricSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveMetricResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveMetricLineItemSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveMetricLineItem" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveMetricLineItemSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveMetricLineItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecalculateGoalSoapIn">
+    <wsdl:part name="parameters" element="tns:RecalculateGoal" />
+  </wsdl:message>
+  <wsdl:message name="RecalculateGoalSoapOut">
+    <wsdl:part name="parameters" element="tns:RecalculateGoalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GoalHasActiveChildGoalsSoapIn">
+    <wsdl:part name="parameters" element="tns:GoalHasActiveChildGoals" />
+  </wsdl:message>
+  <wsdl:message name="GoalHasActiveChildGoalsSoapOut">
+    <wsdl:part name="parameters" element="tns:GoalHasActiveChildGoalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityFieldListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityFieldList" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityFieldListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityFieldListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GoalManagementWebServiceSoap">
+    <wsdl:operation name="GetAttributesToShow">
+      <wsdl:input message="tns:GetAttributesToShowSoapIn" />
+      <wsdl:output message="tns:GetAttributesToShowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveGoal">
+      <wsdl:input message="tns:RetrieveGoalSoapIn" />
+      <wsdl:output message="tns:RetrieveGoalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiscalPeriodDates">
+      <wsdl:input message="tns:GetFiscalPeriodDatesSoapIn" />
+      <wsdl:output message="tns:GetFiscalPeriodDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMetric">
+      <wsdl:input message="tns:RetrieveMetricSoapIn" />
+      <wsdl:output message="tns:RetrieveMetricSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMetricLineItem">
+      <wsdl:input message="tns:RetrieveMetricLineItemSoapIn" />
+      <wsdl:output message="tns:RetrieveMetricLineItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecalculateGoal">
+      <wsdl:input message="tns:RecalculateGoalSoapIn" />
+      <wsdl:output message="tns:RecalculateGoalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GoalHasActiveChildGoals">
+      <wsdl:input message="tns:GoalHasActiveChildGoalsSoapIn" />
+      <wsdl:output message="tns:GoalHasActiveChildGoalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldList">
+      <wsdl:input message="tns:GetEntityFieldListSoapIn" />
+      <wsdl:output message="tns:GetEntityFieldListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GoalManagementWebServiceSoap" type="tns:GoalManagementWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAttributesToShow">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetAttributesToShow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveGoal">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveGoal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiscalPeriodDates">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetFiscalPeriodDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMetric">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveMetric" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMetricLineItem">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveMetricLineItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecalculateGoal">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RecalculateGoal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GoalHasActiveChildGoals">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GoalHasActiveChildGoals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityFieldList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GoalManagementWebServiceSoap12" type="tns:GoalManagementWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAttributesToShow">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetAttributesToShow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveGoal">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveGoal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiscalPeriodDates">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetFiscalPeriodDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMetric">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveMetric" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMetricLineItem">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveMetricLineItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecalculateGoal">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RecalculateGoal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GoalHasActiveChildGoals">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GoalHasActiveChildGoals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityFieldList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityFieldList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GoalManagementWebService">
+    <wsdl:port name="GoalManagementWebServiceSoap" binding="tns:GoalManagementWebServiceSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/GoalManagement.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GoalManagementWebServiceSoap12" binding="tns:GoalManagementWebServiceSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/GoalManagement.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

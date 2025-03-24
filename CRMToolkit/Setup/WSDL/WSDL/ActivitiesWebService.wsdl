@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetQueryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQueryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQueryListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQueryListForLookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dummyEntriesCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQueryListForLookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQueryListForLookupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenderAppointmentBookViewSelector">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="queryType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenderAppointmentBookViewSelectorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenderAppointmentBookViewSelectorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Book">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="content">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="typeCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookResult" type="tns:SchedulingResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SchedulingResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OperationSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notifications" type="tns:ArrayOfNotification" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNotification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Notification" nillable="true" type="tns:Notification" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Notification">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="HasHtmlContent" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Severity" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Plaintext" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Order" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IconUrl" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsBusinessNotification" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Reschedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="content">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="typeCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RescheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RescheduleResult" type="tns:SchedulingResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="state" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeStateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetStateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateMultiple">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ids" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="objectTypeCodes" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGuid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="guid" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateMultipleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateMultipleResult" type="tns:MultipleValidationResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MultipleValidationResults">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OperationSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfBoolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBoolean">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="boolean" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateFollowupActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="objectTypeCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sourceObjectTypeCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sourceObjectId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFollowupActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateFollowupActivityResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="objectTypeCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteActivityResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RenderFollowupActivityFormData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="objectTypeCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenderFollowupActivityFormDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenderFollowupActivityFormDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsActiveRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="objectId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="objectTypeCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsActiveRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsActiveRecordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="activitySubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="activityId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="activityType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="leadId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="customerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="currencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="campaignId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="campaignType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="logResponse" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ownerId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ownerType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConvertActivityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertActivityToCase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="activityIdStr" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="activityType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="activitySubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="customerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="subjectId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="subjectType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertActivityToCaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConvertActivityToCaseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertActivityToLead">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="activityIdStr" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="activityType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertActivityToLeadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConvertActivityToLeadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndSeries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="objectId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="objectTypeCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="seriesEndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stateOfPastInstances" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndSeriesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ValidateRule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="content">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="checkOccurrences" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="seriesTimeZoneCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateRuleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateRuleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRecurrence">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="content">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="oldAppointmentId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRecurrenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddRecurrenceResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEmailFromSalesLiterature">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="salesLiteratureId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEmailFromSalesLiteratureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateEmailFromSalesLiteratureResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetQueryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQueryList" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQueryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryListForLookupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQueryListForLookup" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryListForLookupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQueryListForLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="RenderAppointmentBookViewSelectorSoapIn">
+    <wsdl:part name="parameters" element="tns:RenderAppointmentBookViewSelector" />
+  </wsdl:message>
+  <wsdl:message name="RenderAppointmentBookViewSelectorSoapOut">
+    <wsdl:part name="parameters" element="tns:RenderAppointmentBookViewSelectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookSoapIn">
+    <wsdl:part name="parameters" element="tns:Book" />
+  </wsdl:message>
+  <wsdl:message name="BookSoapOut">
+    <wsdl:part name="parameters" element="tns:BookResponse" />
+  </wsdl:message>
+  <wsdl:message name="RescheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:Reschedule" />
+  </wsdl:message>
+  <wsdl:message name="RescheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:RescheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeStateSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeState" />
+  </wsdl:message>
+  <wsdl:message name="ChangeStateSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetState" />
+  </wsdl:message>
+  <wsdl:message name="GetStateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateMultipleSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateMultiple" />
+  </wsdl:message>
+  <wsdl:message name="ValidateMultipleSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateMultipleResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateFollowupActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFollowupActivity" />
+  </wsdl:message>
+  <wsdl:message name="CreateFollowupActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFollowupActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteActivity" />
+  </wsdl:message>
+  <wsdl:message name="DeleteActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="RenderFollowupActivityFormDataSoapIn">
+    <wsdl:part name="parameters" element="tns:RenderFollowupActivityFormData" />
+  </wsdl:message>
+  <wsdl:message name="RenderFollowupActivityFormDataSoapOut">
+    <wsdl:part name="parameters" element="tns:RenderFollowupActivityFormDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsActiveRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:IsActiveRecord" />
+  </wsdl:message>
+  <wsdl:message name="IsActiveRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:IsActiveRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConvertActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertActivity" />
+  </wsdl:message>
+  <wsdl:message name="ConvertActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConvertActivityToCaseSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertActivityToCase" />
+  </wsdl:message>
+  <wsdl:message name="ConvertActivityToCaseSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertActivityToCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConvertActivityToLeadSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertActivityToLead" />
+  </wsdl:message>
+  <wsdl:message name="ConvertActivityToLeadSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertActivityToLeadResponse" />
+  </wsdl:message>
+  <wsdl:message name="EndSeriesSoapIn">
+    <wsdl:part name="parameters" element="tns:EndSeries" />
+  </wsdl:message>
+  <wsdl:message name="EndSeriesSoapOut">
+    <wsdl:part name="parameters" element="tns:EndSeriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRuleSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateRule" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRuleSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRecurrenceSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRecurrence" />
+  </wsdl:message>
+  <wsdl:message name="AddRecurrenceSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRecurrenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateEmailFromSalesLiteratureSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEmailFromSalesLiterature" />
+  </wsdl:message>
+  <wsdl:message name="CreateEmailFromSalesLiteratureSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEmailFromSalesLiteratureResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ActivitiesWebServiceSoap">
+    <wsdl:operation name="GetQueryList">
+      <wsdl:input message="tns:GetQueryListSoapIn" />
+      <wsdl:output message="tns:GetQueryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryListForLookup">
+      <wsdl:input message="tns:GetQueryListForLookupSoapIn" />
+      <wsdl:output message="tns:GetQueryListForLookupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RenderAppointmentBookViewSelector">
+      <wsdl:input message="tns:RenderAppointmentBookViewSelectorSoapIn" />
+      <wsdl:output message="tns:RenderAppointmentBookViewSelectorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Book">
+      <wsdl:input message="tns:BookSoapIn" />
+      <wsdl:output message="tns:BookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reschedule">
+      <wsdl:input message="tns:RescheduleSoapIn" />
+      <wsdl:output message="tns:RescheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeState">
+      <wsdl:input message="tns:ChangeStateSoapIn" />
+      <wsdl:output message="tns:ChangeStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetState">
+      <wsdl:input message="tns:GetStateSoapIn" />
+      <wsdl:output message="tns:GetStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMultiple">
+      <wsdl:input message="tns:ValidateMultipleSoapIn" />
+      <wsdl:output message="tns:ValidateMultipleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFollowupActivity">
+      <wsdl:input message="tns:CreateFollowupActivitySoapIn" />
+      <wsdl:output message="tns:CreateFollowupActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <wsdl:input message="tns:DeleteActivitySoapIn" />
+      <wsdl:output message="tns:DeleteActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RenderFollowupActivityFormData">
+      <wsdl:input message="tns:RenderFollowupActivityFormDataSoapIn" />
+      <wsdl:output message="tns:RenderFollowupActivityFormDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsActiveRecord">
+      <wsdl:input message="tns:IsActiveRecordSoapIn" />
+      <wsdl:output message="tns:IsActiveRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertActivity">
+      <wsdl:input message="tns:ConvertActivitySoapIn" />
+      <wsdl:output message="tns:ConvertActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertActivityToCase">
+      <wsdl:input message="tns:ConvertActivityToCaseSoapIn" />
+      <wsdl:output message="tns:ConvertActivityToCaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertActivityToLead">
+      <wsdl:input message="tns:ConvertActivityToLeadSoapIn" />
+      <wsdl:output message="tns:ConvertActivityToLeadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndSeries">
+      <wsdl:input message="tns:EndSeriesSoapIn" />
+      <wsdl:output message="tns:EndSeriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRule">
+      <wsdl:input message="tns:ValidateRuleSoapIn" />
+      <wsdl:output message="tns:ValidateRuleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRecurrence">
+      <wsdl:input message="tns:AddRecurrenceSoapIn" />
+      <wsdl:output message="tns:AddRecurrenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmailFromSalesLiterature">
+      <wsdl:input message="tns:CreateEmailFromSalesLiteratureSoapIn" />
+      <wsdl:output message="tns:CreateEmailFromSalesLiteratureSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ActivitiesWebServiceSoap" type="tns:ActivitiesWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetQueryList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQueryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryListForLookup">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQueryListForLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenderAppointmentBookViewSelector">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RenderAppointmentBookViewSelector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Book">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/Book" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reschedule">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/Reschedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeState">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ChangeState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetState">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMultiple">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ValidateMultiple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFollowupActivity">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateFollowupActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenderFollowupActivityFormData">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RenderFollowupActivityFormData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsActiveRecord">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsActiveRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertActivity">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ConvertActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertActivityToCase">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ConvertActivityToCase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertActivityToLead">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ConvertActivityToLead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSeries">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/EndSeries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRule">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ValidateRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRecurrence">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AddRecurrence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmailFromSalesLiterature">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateEmailFromSalesLiterature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ActivitiesWebServiceSoap12" type="tns:ActivitiesWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetQueryList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQueryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryListForLookup">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetQueryListForLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenderAppointmentBookViewSelector">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RenderAppointmentBookViewSelector" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Book">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/Book" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reschedule">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/Reschedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeState">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ChangeState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetState">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMultiple">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ValidateMultiple" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFollowupActivity">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateFollowupActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenderFollowupActivityFormData">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RenderFollowupActivityFormData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsActiveRecord">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsActiveRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertActivity">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ConvertActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertActivityToCase">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ConvertActivityToCase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertActivityToLead">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ConvertActivityToLead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSeries">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/EndSeries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRule">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ValidateRule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRecurrence">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AddRecurrence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmailFromSalesLiterature">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateEmailFromSalesLiterature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ActivitiesWebService">
+    <wsdl:port name="ActivitiesWebServiceSoap" binding="tns:ActivitiesWebServiceSoap">
+      <soap:address location="http://jemorl.crm.dynamics.com/appwebservices/ActivitiesWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ActivitiesWebServiceSoap12" binding="tns:ActivitiesWebServiceSoap12">
+      <soap12:address location="http://jemorl.crm.dynamics.com/appwebservices/ActivitiesWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

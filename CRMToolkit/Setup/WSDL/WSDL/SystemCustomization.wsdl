@@ -1,0 +1,1877 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="CreateAttribute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAttributeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateAttributeResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAttribute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAttributeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteAttribute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attributeId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAttributeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateEntityResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEntityResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateEntityIcons">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEntityIconsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEntityResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateOptionSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOptionSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateOptionSetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOptionSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOptionSetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteOptionSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="optionSetId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOptionSetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateRelationship">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateRelationshipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateRelationshipResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRelationship">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRelationshipResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteRelationship">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="relationshipId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRelationshipResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateEntityMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEntityMapResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteEntityMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityMapId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEntityMapResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AutoMapEntityMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityMapId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutoMapEntityMapResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateAttributeMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAttributeMapResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteAttributeMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attributeMapId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAttributeMapResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishCustomizations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PublishCustomizationsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishAllCustomizations">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishAllCustomizationsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProvisionLanguagesWithJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProvisionLanguagesWithJobResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProvisionLanguages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProvisionLanguagesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckSavedQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="savedQueryId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSavedQueryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGuid">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGuidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGuidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptionSetDataXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="optionSetId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptionSetDataXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOptionSetDataXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptionSetList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOptionSetListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOptionSetListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSchemaNameExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="attributeSchemaName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entityId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkInRecurrenceBaseEntity" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSchemaNameExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsSchemaNameExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeViewState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="viewId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="stateCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeViewStateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NumberOfManagedProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objectTypeCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NumberOfManagedPropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NumberOfManagedPropertiesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateManagedProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateManagedPropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateManagedPropertiesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSqlEncryptionKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="encryptionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="changeEncryptionKey" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSqlEncryptionKeyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SaveEntityGroupConfiguration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveEntityGroupConfigurationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EnableEntitiesForExternalSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityList" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mergeWithExisting" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="solutionId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableEntitiesForExternalSearchResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveAttributesForExternalSearchFaceting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityLogicalName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAttributesForExternalSearchFacetingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAttributesForExternalSearchFacetingResult" type="tns:ArrayOfUserSearchFacetCacheData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserSearchFacetCacheData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserSearchFacetCacheData" type="tns:UserSearchFacetCacheData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserSearchFacetCacheData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AttributeLogicalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttributeDisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttributeTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FacetOrder" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EnableAttributesForExternalSearchFaceting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableAttributesForExternalSearchFacetingResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FetchStatusTransitionEntityFieldList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entityOptionSetGuid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchStatusTransitionEntityFieldListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchStatusTransitionEntityFieldListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEntityEnforceStateTransitions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEntityEnforceStateTransitionsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetRelationshipAsHierarchical">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityRelationshipId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRelationshipAsHierarchicalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateEntityKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEntityKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateEntityKeyResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReactivateEntityKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityKeyId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReactivateEntityKeyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteEntityKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entityKeyId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEntityKeyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEntityHomeGridEventsXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityHomeGridEventsXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityHomeGridEventsXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEntityHomeGridEvents">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="entityId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEntityHomeGridEventsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateOrUpdateCustomControlDefaultConfig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOrUpdateCustomControlDefaultConfigResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateAttributeSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAttribute" />
+  </wsdl:message>
+  <wsdl:message name="CreateAttributeSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAttributeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAttribute" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAttributeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAttributeSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAttribute" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAttributeSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEntity" />
+  </wsdl:message>
+  <wsdl:message name="CreateEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEntity" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEntityIconsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEntityIcons" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEntityIconsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEntityIconsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteEntity" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOptionSetSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOptionSet" />
+  </wsdl:message>
+  <wsdl:message name="CreateOptionSetSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOptionSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOptionSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOptionSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOptionSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOptionSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOptionSetSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOptionSet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOptionSetSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOptionSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateRelationshipSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateRelationship" />
+  </wsdl:message>
+  <wsdl:message name="CreateRelationshipSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateRelationshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRelationshipSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRelationship" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRelationshipSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRelationshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRelationshipSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRelationship" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRelationshipSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRelationshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateEntityMapSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEntityMap" />
+  </wsdl:message>
+  <wsdl:message name="CreateEntityMapSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEntityMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEntityMapSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteEntityMap" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEntityMapSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteEntityMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutoMapEntityMapSoapIn">
+    <wsdl:part name="parameters" element="tns:AutoMapEntityMap" />
+  </wsdl:message>
+  <wsdl:message name="AutoMapEntityMapSoapOut">
+    <wsdl:part name="parameters" element="tns:AutoMapEntityMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAttributeMapSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAttributeMap" />
+  </wsdl:message>
+  <wsdl:message name="CreateAttributeMapSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAttributeMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAttributeMapSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAttributeMap" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAttributeMapSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAttributeMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishCustomizationsSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishCustomizations" />
+  </wsdl:message>
+  <wsdl:message name="PublishCustomizationsSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishCustomizationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishAllCustomizationsSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishAllCustomizations" />
+  </wsdl:message>
+  <wsdl:message name="PublishAllCustomizationsSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishAllCustomizationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProvisionLanguagesWithJobSoapIn">
+    <wsdl:part name="parameters" element="tns:ProvisionLanguagesWithJob" />
+  </wsdl:message>
+  <wsdl:message name="ProvisionLanguagesWithJobSoapOut">
+    <wsdl:part name="parameters" element="tns:ProvisionLanguagesWithJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProvisionLanguagesSoapIn">
+    <wsdl:part name="parameters" element="tns:ProvisionLanguages" />
+  </wsdl:message>
+  <wsdl:message name="ProvisionLanguagesSoapOut">
+    <wsdl:part name="parameters" element="tns:ProvisionLanguagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckSavedQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:CheckSavedQuery" />
+  </wsdl:message>
+  <wsdl:message name="CheckSavedQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:CheckSavedQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGuidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGuid" />
+  </wsdl:message>
+  <wsdl:message name="GetGuidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionSetDataXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOptionSetDataXml" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionSetDataXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOptionSetDataXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionSetListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOptionSetList" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionSetListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOptionSetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsSchemaNameExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:IsSchemaNameExists" />
+  </wsdl:message>
+  <wsdl:message name="IsSchemaNameExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:IsSchemaNameExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeViewStateSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeViewState" />
+  </wsdl:message>
+  <wsdl:message name="ChangeViewStateSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeViewStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="NumberOfManagedPropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:NumberOfManagedProperties" />
+  </wsdl:message>
+  <wsdl:message name="NumberOfManagedPropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:NumberOfManagedPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateManagedPropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateManagedProperties" />
+  </wsdl:message>
+  <wsdl:message name="UpdateManagedPropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateManagedPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSqlEncryptionKeySoapIn">
+    <wsdl:part name="parameters" element="tns:SetSqlEncryptionKey" />
+  </wsdl:message>
+  <wsdl:message name="SetSqlEncryptionKeySoapOut">
+    <wsdl:part name="parameters" element="tns:SetSqlEncryptionKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveEntityGroupConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveEntityGroupConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="SaveEntityGroupConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveEntityGroupConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableEntitiesForExternalSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableEntitiesForExternalSearch" />
+  </wsdl:message>
+  <wsdl:message name="EnableEntitiesForExternalSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableEntitiesForExternalSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAttributesForExternalSearchFacetingSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAttributesForExternalSearchFaceting" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAttributesForExternalSearchFacetingSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAttributesForExternalSearchFacetingResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableAttributesForExternalSearchFacetingSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableAttributesForExternalSearchFaceting" />
+  </wsdl:message>
+  <wsdl:message name="EnableAttributesForExternalSearchFacetingSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableAttributesForExternalSearchFacetingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchStatusTransitionEntityFieldListSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchStatusTransitionEntityFieldList" />
+  </wsdl:message>
+  <wsdl:message name="FetchStatusTransitionEntityFieldListSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchStatusTransitionEntityFieldListResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEntityEnforceStateTransitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEntityEnforceStateTransitions" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEntityEnforceStateTransitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEntityEnforceStateTransitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRelationshipAsHierarchicalSoapIn">
+    <wsdl:part name="parameters" element="tns:SetRelationshipAsHierarchical" />
+  </wsdl:message>
+  <wsdl:message name="SetRelationshipAsHierarchicalSoapOut">
+    <wsdl:part name="parameters" element="tns:SetRelationshipAsHierarchicalResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateEntityKeySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEntityKey" />
+  </wsdl:message>
+  <wsdl:message name="CreateEntityKeySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEntityKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReactivateEntityKeySoapIn">
+    <wsdl:part name="parameters" element="tns:ReactivateEntityKey" />
+  </wsdl:message>
+  <wsdl:message name="ReactivateEntityKeySoapOut">
+    <wsdl:part name="parameters" element="tns:ReactivateEntityKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEntityKeySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteEntityKey" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEntityKeySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteEntityKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityHomeGridEventsXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityHomeGridEventsXml" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityHomeGridEventsXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityHomeGridEventsXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEntityHomeGridEventsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEntityHomeGridEvents" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEntityHomeGridEventsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEntityHomeGridEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrUpdateCustomControlDefaultConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateCustomControlDefaultConfig" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrUpdateCustomControlDefaultConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateCustomControlDefaultConfigResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SystemCustomizationSoap">
+    <wsdl:operation name="CreateAttribute">
+      <wsdl:input message="tns:CreateAttributeSoapIn" />
+      <wsdl:output message="tns:CreateAttributeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttribute">
+      <wsdl:input message="tns:UpdateAttributeSoapIn" />
+      <wsdl:output message="tns:UpdateAttributeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttribute">
+      <wsdl:input message="tns:DeleteAttributeSoapIn" />
+      <wsdl:output message="tns:DeleteAttributeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEntity">
+      <wsdl:input message="tns:CreateEntitySoapIn" />
+      <wsdl:output message="tns:CreateEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntity">
+      <wsdl:input message="tns:UpdateEntitySoapIn" />
+      <wsdl:output message="tns:UpdateEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityIcons">
+      <wsdl:input message="tns:UpdateEntityIconsSoapIn" />
+      <wsdl:output message="tns:UpdateEntityIconsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <wsdl:input message="tns:DeleteEntitySoapIn" />
+      <wsdl:output message="tns:DeleteEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOptionSet">
+      <wsdl:input message="tns:CreateOptionSetSoapIn" />
+      <wsdl:output message="tns:CreateOptionSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOptionSet">
+      <wsdl:input message="tns:UpdateOptionSetSoapIn" />
+      <wsdl:output message="tns:UpdateOptionSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOptionSet">
+      <wsdl:input message="tns:DeleteOptionSetSoapIn" />
+      <wsdl:output message="tns:DeleteOptionSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRelationship">
+      <wsdl:input message="tns:CreateRelationshipSoapIn" />
+      <wsdl:output message="tns:CreateRelationshipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRelationship">
+      <wsdl:input message="tns:UpdateRelationshipSoapIn" />
+      <wsdl:output message="tns:UpdateRelationshipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRelationship">
+      <wsdl:input message="tns:DeleteRelationshipSoapIn" />
+      <wsdl:output message="tns:DeleteRelationshipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEntityMap">
+      <wsdl:input message="tns:CreateEntityMapSoapIn" />
+      <wsdl:output message="tns:CreateEntityMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityMap">
+      <wsdl:input message="tns:DeleteEntityMapSoapIn" />
+      <wsdl:output message="tns:DeleteEntityMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoMapEntityMap">
+      <wsdl:input message="tns:AutoMapEntityMapSoapIn" />
+      <wsdl:output message="tns:AutoMapEntityMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAttributeMap">
+      <wsdl:input message="tns:CreateAttributeMapSoapIn" />
+      <wsdl:output message="tns:CreateAttributeMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttributeMap">
+      <wsdl:input message="tns:DeleteAttributeMapSoapIn" />
+      <wsdl:output message="tns:DeleteAttributeMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishCustomizations">
+      <wsdl:input message="tns:PublishCustomizationsSoapIn" />
+      <wsdl:output message="tns:PublishCustomizationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishAllCustomizations">
+      <wsdl:input message="tns:PublishAllCustomizationsSoapIn" />
+      <wsdl:output message="tns:PublishAllCustomizationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionLanguagesWithJob">
+      <wsdl:input message="tns:ProvisionLanguagesWithJobSoapIn" />
+      <wsdl:output message="tns:ProvisionLanguagesWithJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionLanguages">
+      <wsdl:input message="tns:ProvisionLanguagesSoapIn" />
+      <wsdl:output message="tns:ProvisionLanguagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSavedQuery">
+      <wsdl:input message="tns:CheckSavedQuerySoapIn" />
+      <wsdl:output message="tns:CheckSavedQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuid">
+      <wsdl:input message="tns:GetGuidSoapIn" />
+      <wsdl:output message="tns:GetGuidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionSetDataXml">
+      <wsdl:input message="tns:GetOptionSetDataXmlSoapIn" />
+      <wsdl:output message="tns:GetOptionSetDataXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionSetList">
+      <wsdl:input message="tns:GetOptionSetListSoapIn" />
+      <wsdl:output message="tns:GetOptionSetListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSchemaNameExists">
+      <wsdl:input message="tns:IsSchemaNameExistsSoapIn" />
+      <wsdl:output message="tns:IsSchemaNameExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeViewState">
+      <wsdl:input message="tns:ChangeViewStateSoapIn" />
+      <wsdl:output message="tns:ChangeViewStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfManagedProperties">
+      <wsdl:input message="tns:NumberOfManagedPropertiesSoapIn" />
+      <wsdl:output message="tns:NumberOfManagedPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagedProperties">
+      <wsdl:input message="tns:UpdateManagedPropertiesSoapIn" />
+      <wsdl:output message="tns:UpdateManagedPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSqlEncryptionKey">
+      <wsdl:input message="tns:SetSqlEncryptionKeySoapIn" />
+      <wsdl:output message="tns:SetSqlEncryptionKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntityGroupConfiguration">
+      <wsdl:input message="tns:SaveEntityGroupConfigurationSoapIn" />
+      <wsdl:output message="tns:SaveEntityGroupConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableEntitiesForExternalSearch">
+      <wsdl:input message="tns:EnableEntitiesForExternalSearchSoapIn" />
+      <wsdl:output message="tns:EnableEntitiesForExternalSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAttributesForExternalSearchFaceting">
+      <wsdl:input message="tns:RetrieveAttributesForExternalSearchFacetingSoapIn" />
+      <wsdl:output message="tns:RetrieveAttributesForExternalSearchFacetingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableAttributesForExternalSearchFaceting">
+      <wsdl:input message="tns:EnableAttributesForExternalSearchFacetingSoapIn" />
+      <wsdl:output message="tns:EnableAttributesForExternalSearchFacetingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchStatusTransitionEntityFieldList">
+      <wsdl:input message="tns:FetchStatusTransitionEntityFieldListSoapIn" />
+      <wsdl:output message="tns:FetchStatusTransitionEntityFieldListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityEnforceStateTransitions">
+      <wsdl:input message="tns:UpdateEntityEnforceStateTransitionsSoapIn" />
+      <wsdl:output message="tns:UpdateEntityEnforceStateTransitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRelationshipAsHierarchical">
+      <wsdl:input message="tns:SetRelationshipAsHierarchicalSoapIn" />
+      <wsdl:output message="tns:SetRelationshipAsHierarchicalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEntityKey">
+      <wsdl:input message="tns:CreateEntityKeySoapIn" />
+      <wsdl:output message="tns:CreateEntityKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReactivateEntityKey">
+      <wsdl:input message="tns:ReactivateEntityKeySoapIn" />
+      <wsdl:output message="tns:ReactivateEntityKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityKey">
+      <wsdl:input message="tns:DeleteEntityKeySoapIn" />
+      <wsdl:output message="tns:DeleteEntityKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityHomeGridEventsXml">
+      <wsdl:input message="tns:GetEntityHomeGridEventsXmlSoapIn" />
+      <wsdl:output message="tns:GetEntityHomeGridEventsXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityHomeGridEvents">
+      <wsdl:input message="tns:UpdateEntityHomeGridEventsSoapIn" />
+      <wsdl:output message="tns:UpdateEntityHomeGridEventsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateCustomControlDefaultConfig">
+      <wsdl:input message="tns:CreateOrUpdateCustomControlDefaultConfigSoapIn" />
+      <wsdl:output message="tns:CreateOrUpdateCustomControlDefaultConfigSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SystemCustomizationSoap" type="tns:SystemCustomizationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateAttribute">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttribute">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttribute">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEntity">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntity">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityIcons">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateEntityIcons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOptionSet">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateOptionSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOptionSet">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateOptionSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOptionSet">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteOptionSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRelationship">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateRelationship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRelationship">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateRelationship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRelationship">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteRelationship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEntityMap">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateEntityMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityMap">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteEntityMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoMapEntityMap">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AutoMapEntityMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAttributeMap">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateAttributeMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttributeMap">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteAttributeMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishCustomizations">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/PublishCustomizations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishAllCustomizations">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/PublishAllCustomizations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionLanguagesWithJob">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ProvisionLanguagesWithJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionLanguages">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ProvisionLanguages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSavedQuery">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CheckSavedQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuid">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionSetDataXml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetOptionSetDataXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionSetList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetOptionSetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSchemaNameExists">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsSchemaNameExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeViewState">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ChangeViewState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfManagedProperties">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/NumberOfManagedProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagedProperties">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateManagedProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSqlEncryptionKey">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SetSqlEncryptionKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntityGroupConfiguration">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SaveEntityGroupConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableEntitiesForExternalSearch">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/EnableEntitiesForExternalSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAttributesForExternalSearchFaceting">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveAttributesForExternalSearchFaceting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableAttributesForExternalSearchFaceting">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/EnableAttributesForExternalSearchFaceting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchStatusTransitionEntityFieldList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/FetchStatusTransitionEntityFieldList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityEnforceStateTransitions">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateEntityEnforceStateTransitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRelationshipAsHierarchical">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SetRelationshipAsHierarchical" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEntityKey">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateEntityKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReactivateEntityKey">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ReactivateEntityKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityKey">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteEntityKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityHomeGridEventsXml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityHomeGridEventsXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityHomeGridEvents">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateEntityHomeGridEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateCustomControlDefaultConfig">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateOrUpdateCustomControlDefaultConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SystemCustomizationSoap12" type="tns:SystemCustomizationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateAttribute">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateAttribute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttribute">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateAttribute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttribute">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteAttribute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEntity">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntity">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityIcons">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateEntityIcons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOptionSet">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateOptionSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOptionSet">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateOptionSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOptionSet">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteOptionSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRelationship">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateRelationship" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRelationship">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateRelationship" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRelationship">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteRelationship" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEntityMap">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateEntityMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityMap">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteEntityMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoMapEntityMap">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AutoMapEntityMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAttributeMap">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateAttributeMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttributeMap">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteAttributeMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishCustomizations">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/PublishCustomizations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishAllCustomizations">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/PublishAllCustomizations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionLanguagesWithJob">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ProvisionLanguagesWithJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionLanguages">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ProvisionLanguages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSavedQuery">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CheckSavedQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuid">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionSetDataXml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetOptionSetDataXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionSetList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetOptionSetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSchemaNameExists">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/IsSchemaNameExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeViewState">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ChangeViewState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfManagedProperties">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/NumberOfManagedProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagedProperties">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateManagedProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSqlEncryptionKey">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SetSqlEncryptionKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntityGroupConfiguration">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SaveEntityGroupConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableEntitiesForExternalSearch">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/EnableEntitiesForExternalSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAttributesForExternalSearchFaceting">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveAttributesForExternalSearchFaceting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableAttributesForExternalSearchFaceting">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/EnableAttributesForExternalSearchFaceting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchStatusTransitionEntityFieldList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/FetchStatusTransitionEntityFieldList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityEnforceStateTransitions">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateEntityEnforceStateTransitions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRelationshipAsHierarchical">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SetRelationshipAsHierarchical" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEntityKey">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateEntityKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReactivateEntityKey">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/ReactivateEntityKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityKey">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/DeleteEntityKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityHomeGridEventsXml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetEntityHomeGridEventsXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityHomeGridEvents">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/UpdateEntityHomeGridEvents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateCustomControlDefaultConfig">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateOrUpdateCustomControlDefaultConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SystemCustomization">
+    <wsdl:port name="SystemCustomizationSoap" binding="tns:SystemCustomizationSoap">
+      <soap:address location="http://jemorl.crm.dynamics.com/appwebservices/SystemCustomization.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SystemCustomizationSoap12" binding="tns:SystemCustomizationSoap12">
+      <soap12:address location="http://jemorl.crm.dynamics.com/appwebservices/SystemCustomization.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

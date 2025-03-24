@@ -1,0 +1,7 @@
+C:\bt\242918\r\86897c\src\QA\Performance\Toolkit\CRM_Perf_Toolkit\XrmService\BuildCRM\objd\amd64\Microsoft.Crm.XrmService.csprojResolveAssemblyReference.cache
+C:\bt\242918\r\86897c\src\QA\Performance\Toolkit\CRM_Perf_Toolkit\XrmService\BuildCRM\objd\amd64\_generated.cs
+C:\bt\242918\r\86897c\src\QA\Performance\Toolkit\CRM_Perf_Toolkit\XrmService\BuildCRM\objd\amd64\XrmService.dll
+C:\bt\242918\r\86897c\src\QA\Performance\Toolkit\CRM_Perf_Toolkit\XrmService\BuildCRM\objd\amd64\XrmService.pdb
+C:\bt\242918\r\86897c\src\QA\Performance\Toolkit\CRM_Perf_Toolkit\XrmService\BuildCRM\objd\amd64\CommonTypes.dll
+C:\bt\242918\r\86897c\src\QA\Performance\Toolkit\CRM_Perf_Toolkit\XrmService\BuildCRM\objd\amd64\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll
+C:\bt\242918\r\86897c\src\QA\Performance\Toolkit\CRM_Perf_Toolkit\XrmService\BuildCRM\objd\amd64\CommonTypes.pdb

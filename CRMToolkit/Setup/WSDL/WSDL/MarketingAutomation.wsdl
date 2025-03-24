@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="CopyCampaign">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="campaignId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="saveAsTemplate" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyCampaignResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CopyCampaignResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyDynamicListToStatic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="listId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyDynamicListToStaticResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CopyDynamicListToStaticResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="campaignResponseId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyResponseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CopyResponseResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="columns" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrieveListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMiniCampaign">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mc_MiniCampaignFor_int" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="mc_EmailTemplateId_str" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mc_TargetOption_int" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="mc_TargetIds_str" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mc_FetchXml_str" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mc_MiniCampaignType_str" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mc_LeafActivitiesOwner_int" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="mc_ActivityXml_str" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mc_MiniCampaignName_str" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mc_PostWorkflowEvent_bool" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ownerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ownerIdUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sendEmail" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="mc_QueueId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMiniCampaignResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateMiniCampaignResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMiniCampaignFetchXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mc_MiniCampaignFor_int" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mc_TargetOption_int" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="mc_TargetIds_str" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mc_FetchXml_str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMiniCampaignFetchXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMiniCampaignFetchXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTargetListAssociated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="campaignActivityId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTargetListAssociatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTargetListAssociatedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CopyCampaignSoapIn">
+    <wsdl:part name="parameters" element="tns:CopyCampaign" />
+  </wsdl:message>
+  <wsdl:message name="CopyCampaignSoapOut">
+    <wsdl:part name="parameters" element="tns:CopyCampaignResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopyDynamicListToStaticSoapIn">
+    <wsdl:part name="parameters" element="tns:CopyDynamicListToStatic" />
+  </wsdl:message>
+  <wsdl:message name="CopyDynamicListToStaticSoapOut">
+    <wsdl:part name="parameters" element="tns:CopyDynamicListToStaticResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopyResponseSoapIn">
+    <wsdl:part name="parameters" element="tns:CopyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopyResponseSoapOut">
+    <wsdl:part name="parameters" element="tns:CopyResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveListSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveList" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveListSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateMiniCampaignSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMiniCampaign" />
+  </wsdl:message>
+  <wsdl:message name="CreateMiniCampaignSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMiniCampaignResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMiniCampaignFetchXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMiniCampaignFetchXml" />
+  </wsdl:message>
+  <wsdl:message name="GetMiniCampaignFetchXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMiniCampaignFetchXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTargetListAssociatedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTargetListAssociated" />
+  </wsdl:message>
+  <wsdl:message name="GetTargetListAssociatedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTargetListAssociatedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MarketingAutomationWebServiceSoap">
+    <wsdl:operation name="CopyCampaign">
+      <wsdl:input message="tns:CopyCampaignSoapIn" />
+      <wsdl:output message="tns:CopyCampaignSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyDynamicListToStatic">
+      <wsdl:input message="tns:CopyDynamicListToStaticSoapIn" />
+      <wsdl:output message="tns:CopyDynamicListToStaticSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyResponse">
+      <wsdl:input message="tns:CopyResponseSoapIn" />
+      <wsdl:output message="tns:CopyResponseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveList">
+      <wsdl:input message="tns:RetrieveListSoapIn" />
+      <wsdl:output message="tns:RetrieveListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMiniCampaign">
+      <wsdl:input message="tns:CreateMiniCampaignSoapIn" />
+      <wsdl:output message="tns:CreateMiniCampaignSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMiniCampaignFetchXml">
+      <wsdl:input message="tns:GetMiniCampaignFetchXmlSoapIn" />
+      <wsdl:output message="tns:GetMiniCampaignFetchXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTargetListAssociated">
+      <wsdl:input message="tns:GetTargetListAssociatedSoapIn" />
+      <wsdl:output message="tns:GetTargetListAssociatedSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MarketingAutomationWebServiceSoap" type="tns:MarketingAutomationWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CopyCampaign">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CopyCampaign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyDynamicListToStatic">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CopyDynamicListToStatic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyResponse">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CopyResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveList">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMiniCampaign">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateMiniCampaign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMiniCampaignFetchXml">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetMiniCampaignFetchXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTargetListAssociated">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetTargetListAssociated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MarketingAutomationWebServiceSoap12" type="tns:MarketingAutomationWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CopyCampaign">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CopyCampaign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyDynamicListToStatic">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CopyDynamicListToStatic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyResponse">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CopyResponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveList">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/RetrieveList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMiniCampaign">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/CreateMiniCampaign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMiniCampaignFetchXml">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetMiniCampaignFetchXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTargetListAssociated">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetTargetListAssociated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MarketingAutomationWebService">
+    <wsdl:port name="MarketingAutomationWebServiceSoap" binding="tns:MarketingAutomationWebServiceSoap">
+      <soap:address location="http://jemorl.crm.dynamics.com/appwebservices/MarketingAutomation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MarketingAutomationWebServiceSoap12" binding="tns:MarketingAutomationWebServiceSoap12">
+      <soap12:address location="http://jemorl.crm.dynamics.com/appwebservices/MarketingAutomation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

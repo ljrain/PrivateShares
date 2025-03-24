@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<configsettings>
+	<authentication type="activedirectory" />
+	<reloadentitymanager value="1"/>
+	<ignoretokencheck value="true"/>
+	<trace value="false"/>
+	<webservicens value="http://schemas.microsoft.com/crm/2009/WebServices"/>
+	<crmdomain value="{DOMAINNAME}"/>
+	<runas userid="{DOMAINNAME}\administrator" password="{DOMAINPASSWORD}"/>
+	<emsqlcnn value="Application Name=CRM_Perf_BenchMark;Server=.;Initial Catalog=EntityManager;Integrated Security=sspi"/>
+	<reportserver value="{PREFIX}//{SERVERNAME}:81"/>
+	<parsedependentrequests value="false"/>
+	<bandwidthcapture value="false">
+		<netcapdir value="C:\Program Files\Support Tools"/>
+		<bandwidthoutputdir value="C:\CRMToolkit\CRM_Perf_Toolkit\BandwidthTestResults"/>
+	</bandwidthcapture>
+	<outlooksyncdir value="c:\outlooksyncdata"/>
+	<exchangepassword value=""/>
+	<outlookuserpercentage value="30"/>
+	<turboformsenabled value="true"/>
+
+	<crmservers>
+		<crmserver>
+			<serverbaseurl value="{PREFIX}//{SERVERNAME}:81"/>
+			<server value="{SERVERNAME}"/>
+			<organizationbaseurl value="{PREFIX}//{SERVERNAME}:81/{ORGNAME}"/>
+			<organization name="{ORGNAME}"/>
+			<organizationserviceurl value="{PREFIX}//{SERVERNAME}:81/{ORGNAME}/XRMServices/2011/Organization.svc" />
+			<sqlcnn value="Application Name=CRM_Perf_BenchMark;Server={SQLSERVERNAME};Initial Catalog={ORGNAME}_MSCRM;Integrated Security=sspi"/>
+			<configsqlcnn value="Application Name=CRM_Perf_BenchMark;Server={SQLSERVERNAME};Initial Catalog=MSCRM_CONFIG;Integrated Security=sspi"/>
+			<adxenabled value="{ADXENABLED}"/>
+			<AD>
+				<userbase value="crmusr"/>
+				<userpassword value=""/>
+				<start value="1"/>
+				<count value="320"/>
+			</AD>
+
+			<adx>
+				<customerportalbaseurl value="http://{ADXCUSTOMERPORTAL}" />
+				<communityportalbaseurl value="http://{ADXCOMMUNITYPORTAL}" />
+				<partnerportalbaseurl value="http://{ADXPARTNERPORTAL}" />
+        <userbase value="adxuser" />
+        <userpassword value="" />
+        <orgsize value="small" />
+			</adx>
+
+		</crmserver>
+	</crmservers>
+
+	<executemultiple>
+		<maxThreads>4</maxThreads>
+		<batchSize>1000</batchSize>
+		<totalEntities>10000</totalEntities>
+	</executemultiple>
+</configsettings>

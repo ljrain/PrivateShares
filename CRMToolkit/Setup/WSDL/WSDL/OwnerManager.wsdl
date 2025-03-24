@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/crm/2009/WebServices">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ownerIds" type="tns:ArrayOfGuid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGuid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="guid" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRolesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignAllRecords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="oldOwnerId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="oldOwnerType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newOwnerId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="newOwnerType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignAllRecordsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetTeamType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTeamTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetTeamTypeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignAllRecordsSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignAllRecords" />
+  </wsdl:message>
+  <wsdl:message name="AssignAllRecordsSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignAllRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTeamTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTeamType" />
+  </wsdl:message>
+  <wsdl:message name="SetTeamTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTeamTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OwnerManagerSoap">
+    <wsdl:operation name="GetRoles">
+      <wsdl:input message="tns:GetRolesSoapIn" />
+      <wsdl:output message="tns:GetRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignAllRecords">
+      <wsdl:input message="tns:AssignAllRecordsSoapIn" />
+      <wsdl:output message="tns:AssignAllRecordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTeamType">
+      <wsdl:input message="tns:SetTeamTypeSoapIn" />
+      <wsdl:output message="tns:SetTeamTypeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OwnerManagerSoap" type="tns:OwnerManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoles">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignAllRecords">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AssignAllRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTeamType">
+      <soap:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SetTeamType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OwnerManagerSoap12" type="tns:OwnerManagerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoles">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/GetRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignAllRecords">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/AssignAllRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTeamType">
+      <soap12:operation soapAction="http://schemas.microsoft.com/crm/2009/WebServices/SetTeamType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OwnerManager">
+    <wsdl:port name="OwnerManagerSoap" binding="tns:OwnerManagerSoap">
+      <soap:address location="http://m365x389249.crm4.dynamics.com/appwebservices/OwnerManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OwnerManagerSoap12" binding="tns:OwnerManagerSoap12">
+      <soap12:address location="http://m365x389249.crm4.dynamics.com/appwebservices/OwnerManager.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
